@@ -1,0 +1,167 @@
+<!-- Esste archivo HTML contiene la página de porfolio de la web
+ Estructura base:
+ Encabezado
+ Barra de Navegación
+ Cuerpo: Contenido principal galería
+ Footer: pie de la web  -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio</title>
+        <link rel="stylesheet" href="css/index.css">
+        <script defer src="js/index.js"></script>
+        <link rel="icon" type="image/svg" href="media/FaviconLumenStudioClaudiaPerez.svg">
+        <!-- Línea para colocar el favicon de la web -->
+        <!-- líneas para colocar la tipo  -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!--HEADER-->
+        <header class="header mw">
+            <div class="header__logo">
+                <a href="index.html"><img class="logo" src="media/LogoLumenStudioClaudiaPerez.svg" alt="Logo Lumen"></a>
+            </div>
+            <button class="btn__menu" id="menu__open" type="button"><img src="media/menuHamburg.svg" alt="Icon Menu"></button>
+            <nav class="header__menu" id="menu">
+                <button class="btn__close" id="menu__close" type="button"><img src="media/menuClose.svg" alt="Icon Close"></button>
+                <ul class="header__menu__links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- SECTION BANNER -->
+        <section class="sectionBanner">
+            <div class="sectionBaneer__content">
+                <h1>PORTFOLIO</h1>
+            </div>
+        </section>
+        <!-- MASONRY -->
+        <div class="masonry mw">
+            <div class="masonry__block masonry__block--big">
+                <picture class="masonry__picture">
+                    <source srcset="media/couplesOne.webp">
+                    <img src="media/couplesOne.jpg" loading="lazy" alt="img1">
+                </picture>
+            </div> 
+            <div class="masonry__block masonry__block--medium">
+                <picture class="masonry__picture">
+                    <source srcset="media/fashionGirl.webp">
+                    <img src="media/fashionGirl.jpg" loading="lazy" alt="img1">
+                </picture>
+            </div> 
+            <div class="masonry__block masonry__block--small">
+                <picture class="masonry__picture">
+                    <source srcset="media/portraitBoy.webp">
+                    <img src="media/portraitBoy.jpg" loading="lazy" alt="img1">
+                </picture>
+            </div>              
+            <div class="masonry__block masonry__block--big">
+                <picture class="masonry__picture">
+                    <source srcset="media/landscapesMachupichu.webp">
+                    <img src="media/landscapesMachupichu.jpg" loading="lazy" alt="img1">
+                </picture>
+            </div>
+            
+            <div class="masonry__block masonry__block--medium">
+                <picture class="masonry__picture">
+                    <source srcset="media/cultureOldMenTwo.webp">
+                    <img src="media/cultureOldMenTwo.jpg" loading="lazy" alt="img1">
+                </picture>
+            </div>
+            <div class="masonry__block masonry__block--small">
+                <picture class="masonry__picture">
+                    <source srcset="media/couplesFour.webp">
+                    <img src="media/couplesFour.jpg" loading="lazy" alt="img1">
+                </picture>
+            </div>
+            <div class="masonry__block masonry__block--medium">
+                <picture class="masonry__picture">
+                    <source srcset="media/portraitGirl.webp">
+                    <img src="media/portraitGirl.jpg" loading="lazy" alt="img1">
+                </picture>
+            </div>
+            <div class="masonry__block masonry__block--big">
+                <picture class="masonry__picture">
+                    <source srcset="media/cultureGirl.webp">
+                    <img src="media/cultureGirl.jpg" loading="lazy" alt="img1">
+                </picture>
+            </div>              
+            <div class="masonry__block masonry__block--medium">
+                <picture class="masonry__picture">
+                    <source srcset="media/couplesTwo.webp">
+                    <img src="media/couplesTwo.jpg" loading="lazy" alt="img1">
+                </picture>
+            </div>                  
+            <div class="masonry__block masonry__block--small">
+                <picture class="masonry__picture">
+                    <source srcset="media/couplesThree.webp">
+                    <img src="media/couplesThree.webp" loading="lazy" alt="img1">
+                </picture>
+            </div>       
+            <div class="masonry__block masonry__block--big">
+                <picture class="masonry__picture">
+                    <source srcset="media/fashionGirlTwo.webp">
+                    <img src="media/fashionGirlTwo.jpg" loading="lazy" alt="img1">
+                </picture>
+            </div>        
+            <div class="masonry__block masonry__block--small">
+                <picture class="masonry__picture">
+                    <source srcset="media/couplesFive.webp">
+                    <img src="media/couplesFive.jpg" loading="lazy" alt="img1">
+                </picture>
+            </div>                        
+        </div>
+        <!-- FOOTER -->
+        <footer class="footer appear">
+            <div class="footer__container mw">
+                <div class="footer__content">
+                    <a href="index.html"><img src="media/LogoLumenStudioClaudiaPerez.svg" alt="Logo Lumen"></a>
+                    <h2>"Where photography comes to life"</h2>
+                    <p>We will be happy to capture your ideas and stories with our photography. Send us a message explaining the services you need. We will be pleased to answer you.</p>
+                </div>
+                <div class="footer__form">
+                    <div class="footer__form footer__form--info">
+                        <form class="form">
+                            <div class="form__container">
+                                <div class="form__group">
+                                    <input type="text" placeholder="Name:" id="name" name="name" required>
+                                </div>
+                                <div class="form__group">
+                                    <input type="email" placeholder="Email:" id="email" name="email" required>
+                                </div>
+                            </div>
+                            <button type="submit">Send</button>
+                        </form>
+                        <p>I certify that before contacting lumenstudio.com I have read and accept the terms of the <a href="#">Legal Notice</a>.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border mw"></div>
+            <div class="footer__blockNav mw">
+                <a href="index.html"><img src="media/IconHome.svg" alt="icon">Home</a>
+                <a href="about.html"><img src="media/IconAboutus.svg" alt="icon">About us</a>
+                <a href="portfolio.html"><img src="media/IconWorks.svg" alt="icon">Portfolio</a>
+                <a href="contact.html"><img src="media/IconContactus.svg" alt="icon">Contact us</a>
+            </div>
+            <div class="footer__rrss mw">
+                <a href="#"><img src="media/IconIG.svg" alt="Icon Instagram"></a>
+                <a href="#"><img src="media/IconLink.svg" alt="Icon Linkedin"></a>
+            </div>
+            <div class="border mw"></div>
+            <div class="footer__legalText mw">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Cookie Policy</a>
+                <a href="#">Legal Notice</a>
+            </div>
+            <span class="copyRight mw">©LumenStudio 2024. All rights reserved</span>
+        </footer>
+        <button id="btn__swipeUp">Up</button>
+    </body>
+</html>

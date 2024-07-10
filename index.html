@@ -1,3 +1,9 @@
+<!-- Esste archivo HTML contiene la página principal de la web
+ Estructura base:
+ Encabezado
+ Barra de Navegación
+ Cuerpo: Contenido principal
+ Footer: pie de la web  -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -6,45 +12,322 @@
         <title>Lumen Studio</title>
         <link rel="stylesheet" href="css/index.css">
         <script defer src="js/index.js"></script>
+        <link rel="icon" type="image/svg" href="media/FaviconLumenStudioClaudiaPerez.svg">
         <!-- Línea para colocar el favicon de la web -->
-        <link rel="icon" type="image/svg" href="media/FaviconLumenStudioClaudiaPerez.svg"> 
         <!-- líneas para colocar la tipo  -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-
     </head>
+    <!-- CONTENIDO PRINCIPAL -->
     <body>
-         <!-- CURSOR -->       
-        <div id="custom__cursor"></div>
-         <!--HEADER-->
+        <!--HEADER-->
         <header class="header mw">
             <div class="header__logo">
-                <a href="index.html"><img src="media/LogoLumenStudioClaudiaPerez.svg" alt="Logo Lumen"></a>
+                <a href="index.html"><img class="logo" src="media/LogoLumenStudioClaudiaPerez.svg" alt="Logo Lumen"></a>
             </div>
-                       
-            <nav class="header__menu">
+            <button class="btn__menu" id="menu__open" type="button"><img src="media/menuHamburg.svg" alt="Icon Menu"></button>
+            <nav class="header__menu" id="menu">
+                <button class="btn__close" id="menu__close" type="button"><img src="media/menuClose.svg" alt="Icon Close"></button>
                 <ul class="header__menu__links">
-                    <li><a href="index.html">Home</a></li>                    
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About us</a></li>
-                    <li><a href="works.html">Portfolio</a></li>
-                    <li><a href="contact.html">Contact</a></li>                
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </header>
-        <!--BANNER-->
-        <section class="banner">                     
+        <!--BANNER: Tenemos el banner principal de la web, que este tendrá una animación en css para que vayan apareciendo las imágenes-->
+        <section class="banner">
             <div class="layer__overlay">
                 <div class="banner__section mw">
                     <div class="banner__content">
                         <h1>WELCOME TO LUMEN STUDIO</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo delectus doloribus possimus consequuntur molestias, illum quaerat veniam necessitatibus doloremque ea cum perspiciatis saepe odio atque laudantium iusto officiis quod molestiae.</p>
-                        <a class="general__btn" href="#">See More</a>                    
+                        <p>Where photography comes to life. Each image tells a unique story, capturing unrepeatable moments with art and creativity. We are passionate about transforming ordinary moments into extraordinary memories. Discover the power of a well-captured image with us.</p>
+                        <a class="general__btn" href="portfolio.html">See More</a>
                     </div>
-                </div>  
-            </div>          
-            
-        </section>        
-        
+                </div>
+            </div>
+        </section>
+         <!-- SECTION TITLE: Da entrada a los diferentes apartados de la página principal -->
+         <section class="sectionTitle appear">
+            <div class="sectionTitle__content">
+                <h2>ABOUT US</h2>
+            </div>
+        </section>
+        <!-- SECTION ABOUT: En esta sección está un resumen del about us -->
+        <section class="about mw">
+            <div class="about__img appear">
+                <!-- Se está usando esta etiqueta contenedora para especificar múltiples elementos, para habilitar la versión webp para que se pueda cargar en otros dispositivos-->
+                <picture>
+                    <source srcset="media/generalStudioBW.webp">
+                    <img src="media/generalStudioBW.jpg" loading="lazy" alt="Studio Photo">
+                </picture>
+            </div>
+            <div class="about__info appear">
+                <h2>A LITTLE BIT ABOUT US</h2>
+                <p class="appear">At Lumen Studio, we specialize in capturing life's most precious moments with a dedication to excellence and creativity. Founded with a passion for photography, our studio is a benchmark in imaging. We believe every photograph tells a story, and our team uses advanced techniques and an artistic approach to ensure perfection in every shot.</p>
+                <p class="appear">We offer a wide range of services, including portrait, event, landscape, fashion, and cultural photography, all with a focus on quality and customer satisfaction. Our photographers have a keen eye for detail and a deep understanding of capturing meaningful moments. Our post-production team enhances each image to create polished, professional photos, paying close attention to color correction and retouching.</p>
+                <p class="appear">In addition to our photography services, we offer personalized photo albums and high-quality prints to help you preserve your memories beautifully and lastingly. At Lumen Studio, we are more than just photographers; we are storytellers dedicated to preserving your memories authentically and beautifully.</p>
+                <a class="general__btn appear" href="about.html">Read more</a>
+            </div>
+        </section>
+        <!-- SECTION TITLE: Da entrada a los diferentes apartados de la página principal -->
+        <section class="sectionTitle appear">
+            <div class="sectionTitle__content">
+                <h2>OURS SERVICES</h2>
+            </div>
+        </section>
+        <!-- SECTION SERVICES TABS: se ha implementado una sección a base de pestañas, para explicar los servicios que se ofrecen -->
+        <div class="services mw appear">
+            <div class="services__tabs">
+                <a class="tab" data-target="tabOne">Fashion<img src="media/iconCamera.svg" alt="Icon Camera"></a>
+                <a class="tab" data-target="tabTwo">Portrait<img src="media/iconPortrait.svg" alt="Icon Portrait"></a>
+                <a class="tab" data-target="tabthree">Culture<img src="media/iconCamera.svg" alt="Icon Camera"></a>
+                <a class="tab" data-target="tabFour">Landscape<img src="media/iconLandscape.svg" alt="Icon LandScape"></a>
+                <a class="tab" data-target="tabFive">Albun<img src="media/inconBookmark.svg" alt="Icon Bookmark"></a>
+            </div>
+            <div class="border mw"></div>
+            <div class="services__content">
+                <!-- En estas clases se ha incluido "active" que ha creado en el archivo JS  -->
+                <div id="tabOne" class="tab__content active">
+                    <p>Our Fashion Photography captures the essence and style of contemporary fashion. We work with designers, models, and brands to create striking images that highlight the latest trends and reflect the unique identity of each collection.</p>
+                    <picture>
+                        <source srcset="media/fashionGirlTwo.webp">
+                        <img src="media/fashionGirlTwo.jpg" loading="lazy" alt="Girl Model">
+                    </picture>
+                </div>
+                <div id="tabTwo" class="tab__content">
+                    <p>At Lumen Studio, we believe that everyone has a story to tell. Our portraits are designed to highlight your unique personality, capturing your best angles and expressions in photographs that authentically represent you.</p>
+                    <picture>
+                        <source srcset="media/portraitGirl.webp">
+                        <img src="media/portraitGirl.jpg" loading="lazy" alt="Girl Portrait">
+                    </picture>
+                </div>
+                <div id="tabthree" class="tab__content">
+                    <p>We are passionate about documenting the richness of the world's cultures. Our Cultural Photography explores traditions, festivals, and customs, capturing unique moments that reflect the diversity and beauty of various global communities.</p>
+                    <picture>
+                        <source srcset="media/cultureGirl.webp">
+                        <img src="media/cultureGirl.jpg" loading="lazy" alt="Girl Tribu">
+                    </picture>
+                </div>
+                <div id="tabFour" class="tab__content">
+                    <p>Landscape Photography is one of our specialties. We capture the natural beauty of the world around us, from majestic mountains to serene sunsets on the beach. Our landscape images are a window into nature at its finest.</p>
+                    <picture>
+                        <source srcset="media/landscapesMachupichu.webp">
+                        <img src="media/landscapesMachupichu.jpg" loading="lazy" alt="Machupichu">
+                    </picture>
+                </div>
+                <div id="tabFive" class="tab__content">
+                    <p>We create personalized photo albums that tell memorable stories. From weddings to special events, our albums are a perfect way to preserve your most cherished memories in an elegant and durable format.
+                    </p>
+                    <picture>
+                        <source srcset="media/couplesOne.webp">
+                        <img src="media/couplesOne.jpg" loading="lazy" alt="Wedding Couple">
+                    </picture>
+                </div>
+            </div>
+        </div>
+        <!-- SECTION BANNER MESSAGE  -->
+        <div class="message">
+            <h3>"Photography is the art of capturing a moment, a feeling, and a story in a single frame, turning the ephemeral into the eternal."</h3>
+        </div>
+        <!-- SECTION TITLE -->
+        <section class="sectionTitle appear">
+            <div class="sectionTitle__content">
+                <h2>OURS CLIENTS</h2>
+            </div>
+        </section>
+        <!-- SECTION EXPERIENCES -->
+        <section class="experience mw">
+            <div class="experience__info appear">
+                <h2>EXPERIENCE IN THE FIELD</h2>
+                <p>With over a decade of experience in the photography industry, Lumen Studio has worked on a wide variety of projects, from intimate portrait sessions to large advertising campaigns. Our dedication to excellence and commitment to innovation have allowed us to remain at the forefront of professional photography.</p>
+                <div class="experience__info experience__info--colaborators appear">
+                    <p>Over the years, we have had the honor of collaborating with numerous renowned companies and brands, delivering results that exceed expectations. Here are some of the companies we have worked with:</p>
+                    <div class="colaborators__container">
+                        <div class="colaborators__block">
+                            <div class="colaborators__block colaborators__block--icons appear">
+                                <img src="media/BrandMcp.svg" alt="M.C.P">
+                                <span>Leader in the fashion industry</span>
+                            </div>
+                            <div class="colaborators__block colaborators__block--icons appear">
+                                <img src="media/brandUnwined.svg" alt="Unwined">
+                                <span>Creative advertising agency</span>
+                            </div>
+                            <div class="colaborators__block colaborators__block--icons appear">
+                                <img src="media/brandLancelite.svg" alt="Lancelite">
+                                <span>High-quality magazine publisher</span>
+                            </div>
+                            <div class="colaborators__block colaborators__block--icons appear">
+                                <img src="media/brandCarrassava.svg" alt="Carrassava">
+                                <span>Events and entertainment</span>
+                            </div>
+                        </div>                                                           
+                    </div>                   
+                </div>                
+            </div>
+            <div class="experience__img appear">
+                <picture>
+                    <source srcset="media/generalStudioColor.webp">
+                    <img src="media/generalStudioColor.jpg" loading="lazy" alt="Studio Photo">
+                </picture>
+            </div>
+        </section>
+        <!-- SECTION BRANDS SLIDER -->
+        <div class="slider">
+            <div class="slider__container">
+                <div class="slider__content">
+                    <div class="slider__content slider__content--slide">
+                        <img src="media/brandCarrassava.svg" alt="Logo Carrassava">
+                    </div>
+                    <div class="slider__content slider__content--slide">
+                        <img src="media/brandUnwined.svg" alt="Logo Unwined">
+                    </div>
+                    <div class="slider__content slider__content--slide">
+                        <img src="media/brandChiabele.svg" alt="Logo Chiabele">
+                    </div>
+                    <div class="slider__content slider__content--slide">
+                        <img src="media/brandEpism.svg" alt="Logo Epsism">
+                    </div>
+                    <div class="slider__content slider__content--slide">
+                        <img src="media/brandFrescon.svg" alt="Logo Fescon">
+                    </div>
+                    <div class="slider__content slider__content--slide">
+                        <img src="media/brandLancelite.svg" alt="Logo Lancelite">
+                    </div>
+                    <div class="slider__content slider__content--slide">
+                        <img src="media/brandLecoid.svg" alt="Logo Lecoid">
+                    </div>
+                    <div class="slider__content slider__content--slide">
+                        <img src="media/BrandMcp.svg" alt="Logo MCP">
+                    </div>
+                    <div class="slider__content slider__content--slide">
+                        <img src="media/brandPallace.svg" alt="Logo Pallace">
+                    </div>
+                    <div class="slider__content slider__content--slide">
+                        <img src="media/brandPalletfish.svg" alt="Logo Palletfish">
+                    </div>
+                    <div class="slider__content slider__content--slide">
+                        <img src="media/brandUnwined.svg" alt="Logo Unwined">
+                    </div>
+                    <div class="slider__content slider__content--slide">
+                        <img src="media/brandCarrassava.svg" alt="Logo Carrassava">
+                    </div>
+                    <div class="slider__content slider__content--slide">
+                        <img src="media/brandChiabele.svg" alt="Logo Chiabele">
+                    </div>
+                    <div class="slider__content slider__content--slide">
+                        <img src="media/brandEpism.svg" alt="Logo Epsism">
+                    </div>
+                    <div class="slider__content slider__content--slide">
+                        <img src="media/brandFrescon.svg" alt="Logo Fescon">
+                    </div>
+                    <div class="slider__content slider__content--slide">
+                        <img src="media/brandLancelite.svg" alt="Logo Lancelite">
+                    </div>
+                    <div class="slider__content slider__content--slide">
+                        <img src="media/brandLecoid.svg" alt="Logo Lecoid">
+                    </div>
+                    <div class="slider__content slider__content--slide">
+                        <img src="media/BrandMcp.svg" alt="Logo MCP">
+                    </div>
+                    <div class="slider__content slider__content--slide">
+                        <img src="media/brandPallace.svg" alt="Logo Pallace">
+                    </div>
+                    <div class="slider__content slider__content--slide">
+                        <img src="media/brandPalletfish.svg" alt="Logo Palletfish">
+                    </div>
+                    <div class="slider__content slider__content--slide">
+                        <img src="media/brandUnwined.svg" alt="Logo Unwined">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- SECTION OPINIONS -->
+        <section class="opinions">
+            <h2>CUSTOMER REVIEWS</h2>
+            <p>At Lumen Studio, customer satisfaction is our top priority. We take pride in receiving positive feedback and are delighted to share some of the experiences our clients have had with us.</p>
+            <div class="opinions__container">
+                <div class="opinion">
+                    <h3>María López:</h3>
+                    <div class="rating">
+                        <img class="star" src="media/IconStarColor.svg" alt="star">
+                        <img class="star" src="media/IconStarColor.svg" alt="star">
+                        <img class="star" src="media/IconStarColor.svg" alt="star">
+                        <img class="star" src="media/IconStarColor.svg" alt="star">
+                        <img class="star" src="media/IconStarColor.svg" alt="star">
+                    </div>
+                    <p>"Lumen Studio captured the essence of our special day in a way I never imagined. Each photo is a work of art, filled with emotion and detail. We are thrilled with the results!"</p>
+                </div>
+                <div class="opinion">
+                    <h3>Carlos Méndez:</h3>
+                    <div class="rating">
+                        <img class="star" src="media/IconStarColor.svg" alt="star">
+                        <img class="star" src="media/IconStarColor.svg" alt="star">
+                        <img class="star" src="media/IconStarColor.svg" alt="star">
+                        <img class="star" src="media/IconStarColor.svg" alt="star">
+                    </div>
+                    <p>"Working with Lumen Studio was an incredible experience. Their professionalism and attention to detail made our photo session perfect. The images are simply stunning."</p>
+                </div>
+                <div class="opinion">
+                    <h3>Clara Ruiz:</h3>
+                    <div class="rating">
+                        <img class="star" src="media/IconStarColor.svg" alt="star">
+                        <img class="star" src="media/IconStarColor.svg" alt="star">
+                        <img class="star" src="media/IconStarColor.svg" alt="star">
+                        <img class="star" src="media/IconStarColor.svg" alt="star">
+                        <img class="star" src="media/IconStarColor.svg" alt="star">
+                    </div>
+                    <p>"The photos from my portrait session exceeded all my expectations. Lumen Studio has a unique talent for capturing the true essence of a person. I will definitely recommend them to all my friends!"</p>
+                </div>
+            </div>
+        </section>
+        <!-- FOOTER -->
+        <footer class="footer appear">
+            <div class="footer__container mw">
+                <div class="footer__content">
+                    <a href="index.html"><img src="media/LogoLumenStudioClaudiaPerez.svg" alt="Logo Lumen"></a>
+                    <h2>"Where photography comes to life"</h2>
+                    <p>We will be happy to capture your ideas and stories with our photography. Send us a message explaining the services you need. We will be pleased to answer you.</p>
+                </div>
+                <div class="footer__form">
+                    <div class="footer__form footer__form--info">
+                        <form class="form">
+                            <div class="form__container">
+                                <div class="form__group">
+                                    <input type="text" placeholder="Name:" id="name" name="name" required>
+                                </div>
+                                <div class="form__group">
+                                    <input type="email" placeholder="Email:" id="email" name="email" required>
+                                </div>
+                            </div>
+                            <button type="submit">Send</button>
+                        </form>
+                        <p>I certify that before contacting lumenstudio.com I have read and accept the terms of the <a href="#">Legal Notice</a>.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border mw"></div>
+            <div class="footer__blockNav mw">
+                <a href="index.html"><img src="media/IconHome.svg" alt="icon">Home</a>
+                <a href="about.html"><img src="media/IconAboutus.svg" alt="icon">About us</a>
+                <a href="portfolio.html"><img src="media/IconWorks.svg" alt="icon">Portfolio</a>
+                <a href="contact.html"><img src="media/IconContactus.svg" alt="icon">Contact us</a>
+            </div>
+            <div class="footer__rrss mw">
+                <a href="#"><img src="media/IconIG.svg" alt="Icon Instagram"></a>
+                <a href="#"><img src="media/IconLink.svg" alt="Icon Linkedin"></a>
+            </div>
+            <div class="border mw"></div>
+            <div class="footer__legalText mw">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Cookie Policy</a>
+                <a href="#">Legal Notice</a>
+            </div>
+            <span class="copyRight mw">©LumenStudio 2024. All rights reserved</span>
+        </footer>
+        <button id="btn__swipeUp">Up</button>
     </body>
+
 </html>
