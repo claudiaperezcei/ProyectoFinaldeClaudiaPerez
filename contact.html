@@ -10,29 +10,32 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Contact Us</title>
+        <!-- Metadescripciones para resumir el contenido de la página -->
+        <meta name="description" content="Want to talk to us? You can contact us to learn more about our photography services, request a quote or just say hello. We are here to help you.">
         <link rel="stylesheet" href="css/index.css">
         <script defer src="js/index.js"></script>
+         <!-- Línea para colocar el favicon de la web -->
         <link rel="icon" type="image/svg" href="media/FaviconLumenStudioClaudiaPerez.svg">
-        <!-- Línea para colocar el favicon de la web -->
-        <!-- líneas para colocar la tipo  -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     </head>
     <body>
         <!--HEADER-->
+        <!-- En cada secciión contenedora se ha colocado la clase > mw (se verá repetida en cada sección contenedora), para limitar el ancho máximo y centrarlo horizontalmente -->
         <header class="header mw">
             <div class="header__logo">
-                <a href="index.html"><img class="logo" src="media/LogoLumenStudioClaudiaPerez.svg" alt="Logo Lumen"></a>
+                <a href="index.html" title="Home Page"><img class="logo" src="media/LogoLumenStudioClaudiaPerez.svg" alt="Logo Lumen"></a>
             </div>
-            <button class="btn__menu" id="menu__open" type="button"><img src="media/menuHamburg.svg" alt="Icon Menu"></button>
+            <!-- BOTÓN DE MENÚ: Botón que abre el menú de navegación, solo se visualiza en dispositivos + pequeños) -->
+            <button class="btn__menu" id="menu__open" type="button" title="Button Menu Open"><img src="media/menuHamburg.svg" alt="Icon Menu"></button>
+            <!-- Menú de navegación con los links a las páginas de la web -->
             <nav class="header__menu" id="menu">
-                <button class="btn__close" id="menu__close" type="button"><img src="media/menuClose.svg" alt="Icon Close"></button>
+                <!-- Botón que cierra el menú de navegación -->
+                <button class="btn__close" id="menu__close" type="button" title="Button Close"><img src="media/menuClose.svg" alt="Icon Close"></button>
+                <!-- Lista de links -->
                 <ul class="header__menu__links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About us</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.html" title="Home Page">Home</a></li>
+                    <li><a href="about.html" title="About Page">About us</a></li>
+                    <li><a href="portfolio.html" title="Portfolio Page">Portfolio</a></li>
+                    <li><a href="contact.html" title="Contact Page">Contact</a></li>
                 </ul>
             </nav>
         </header>
@@ -44,9 +47,11 @@
         </section>
         <!-- SECTION CONTACT -->
          <section class="contact mw">
+            <!-- Contenedor de la primera columna con la información de contacto -->
             <div class="contact__container">
                 <h3>CONTACT INFORMATION</h3>
                 <p>For inquiries and bookings, please reach out to us through any of the following methods:</p>
+                <!-- Bloques de información -->
                 <div class="contact__information">
                     <div class="contact__information contact__information--icons">
                         <img src="media/IconTel.svg" alt="Icon telephone">
@@ -62,70 +67,97 @@
                     </div>
                 </div>                
             </div>
+            <!-- Contenedor de la segunda columna del (formulario de contacto) -->
             <div class="contact__form">
-                <form action="" class="contact__form contact__form--container">
+                <!-- Formulario -->
+                <form action="#" method="post" class="contact__form contact__form--container">
                     <div class="form__content">
+                        <!-- Campo para el nombre, el atributo > required obliga a que el campo sea completado-->
                         <div class="form__info">
-                            <input type="text" placeholder="Name:" id="name" name="name" required>
+                            <label for="nameFour"></label>
+                            <input type="text" placeholder="Name:" id="nameFour" name="name" required>
                         </div>
+                        <!-- Campo para el correo electrónico, el atributo > required obliga a que el campo sea completado -->
                         <div class="form__info">
-                            <input type="email" placeholder="Email:" id="email" name="email" required>
+                            <label for="emailFour"></label>
+                            <input type="email" placeholder="Email:" id="emailFour" name="email" required>
                         </div>                        
                     </div>
+                     <!-- Campo para el asunto, el atributo > required obliga a que el campo sea completado -->
+                    <label for="subject"></label>
                     <input type="text" placeholder="Subject:" id="subject" name="subject" required>
+                    <!-- Campo para el mensaje -->
                     <textarea placeholder="Write here..." id="message" name="message"></textarea>                    
-                    <button type="submit">Send</button>
+                    <!-- Botón de enviar el formulario -->
+                    <button type="submit" title="Button Submit">Send</button>
                 </form>
             </div>
          </section>
+         <!-- Contenedor del mapa -->
          <div class="block__map mw">
+            <!-- muestra un bloque que contiene un mapa incrustado de Google Maps, utiliando la la etiqueta igrame -->
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3034.4798671351914!2d-3.670166210332723!3d40.48677057771435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42298535d47503%3A0x340c2d2121eef146!2sAv.%20de%20Manoteras%2C%2038%2C%20Hortaleza%2C%2028050%20Madrid!5e0!3m2!1ses!2ses!4v1720373173946!5m2!1ses!2ses" width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
         </div>
         <!-- FOOTER -->
         <footer class="footer appear">
             <div class="footer__container mw">
+                <!-- Contenedor de la primera columna de contenido en el footer -->
                 <div class="footer__content">
-                    <a href="index.html"><img src="media/LogoLumenStudioClaudiaPerez.svg" alt="Logo Lumen"></a>
+                    <a href="index.html" title="Home Page"><img src="media/LogoLumenStudioClaudiaPerez.svg" alt="Logo Lumen"></a>
                     <h2>"Where photography comes to life"</h2>
                     <p>We will be happy to capture your ideas and stories with our photography. Send us a message explaining the services you need. We will be pleased to answer you.</p>
                 </div>
+                <!-- Contenedor de la segunda columna de contenido en el footer (formulario de contacto) -->
                 <div class="footer__form">
                     <div class="footer__form footer__form--info">
-                        <form class="form">
+                        <!-- Formulario  -->
+                        <form action="#" method="post" class="form">
                             <div class="form__container">
+                                <!-- Campo para el nombre -->
                                 <div class="form__group">
-                                    <input type="text" placeholder="Name:" id="name" name="name" required>
+                                    <label for="nameOne">Name:</label>
+                                    <!-- el atributo > required obliga a que el campo sea completado -->
+                                    <input type="text" placeholder="Name:" id="nameOne" name="name" required>
                                 </div>
+                                <!-- Campo para el correo -->
                                 <div class="form__group">
-                                    <input type="email" placeholder="Email:" id="email" name="email" required>
+                                    <label for="emailOne">Email:</label>
+                                    <input type="email" placeholder="Email:" id="emailOne" name="email" required>
                                 </div>
                             </div>
-                            <button type="submit">Send</button>
+                            <!-- Botón de envío del formulario  -->
+                            <button type="submit" title="Button Submit">Send</button>
                         </form>
-                        <p>I certify that before contacting lumenstudio.com I have read and accept the terms of the <a href="#">Legal Notice</a>.</p>
+                        <!-- Texto con enlace para ver los términos legales -->
+                        <p>I certify that before contacting lumenstudio.com I have read and accept the terms of the <a href="#" title="Legal Notice">Legal Notice</a>.</p>
                     </div>
                 </div>
             </div>
+            <!-- línea de separación a los contenidos -->
             <div class="border mw"></div>
+            <!-- Bloque de navegación del footer -->
             <div class="footer__blockNav mw">
-                <a href="index.html"><img src="media/IconHome.svg" alt="icon">Home</a>
-                <a href="about.html"><img src="media/IconAboutus.svg" alt="icon">About us</a>
-                <a href="portfolio.html"><img src="media/IconWorks.svg" alt="icon">Portfolio</a>
-                <a href="contact.html"><img src="media/IconContactus.svg" alt="icon">Contact us</a>
+                <a href="index.html" title="Home Page"><img src="media/IconHome.svg" alt="icon">Home</a>
+                <a href="about.html" title="About Page"><img src="media/IconAboutus.svg" alt="icon">About us</a>
+                <a href="portfolio.html" title="Portfolio Page"><img src="media/IconWorks.svg" alt="icon">Portfolio</a>
+                <a href="contact.html" title="Contact Page"><img src="media/IconContactus.svg" alt="icon">Contact us</a>
             </div>
+            <!-- Bloque de redes sociales del footer -->
             <div class="footer__rrss mw">
-                <a href="#"><img src="media/IconIG.svg" alt="Icon Instagram"></a>
-                <a href="#"><img src="media/IconLink.svg" alt="Icon Linkedin"></a>
+                <a href="https://www.instagram.com/clandiip/?hl=es" title="Link Instagram" target="_blank" rel="noreferrer"><img src="media/IconIG.svg" alt="Icon Instagram"></a>
+                <a href="https://www.linkedin.com/in/clandiip/?originalSubdomain=es" title="Link Linkedin" target="_blank" rel="noreferrer"><img src="media/IconLink.svg" alt="Icon Linkedin"></a>
             </div>
+            <!-- línea de separación a los contenidos -->
             <div class="border mw"></div>
+            <!-- Bloque de texto legal del footer -->
             <div class="footer__legalText mw">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Cookie Policy</a>
-                <a href="#">Legal Notice</a>
+                <a href="#" title="Privacy Policy">Privacy Policy</a>
+                <a href="#" title="Cookie Policy">Cookie Policy</a>
+                <a href="#" title="Cookie Policy">Legal Notice</a>
             </div>
             <span class="copyRight mw">©LumenStudio 2024. All rights reserved</span>
         </footer>
-        <button id="btn__swipeUp">Up</button>
+        <!-- Botón interactivo posicionado al fianl de la pag, para permitir a los usuarios desplazarse hacia arriba en la pag. web -->
+        <button id="btn__swipeUp" title="Button SwipeUp">UP</button>
     </body>
 </html>

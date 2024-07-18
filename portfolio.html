@@ -10,29 +10,32 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Portfolio</title>
+        <!-- Metadescripciones para resumir el contenido de la página -->
+        <meta name="description" content="Explore our portfolio, where creativity and passion come together to capture unique and exciting moments. Discover our best work in fashion photography, portrait, landscape and more.">
         <link rel="stylesheet" href="css/index.css">
         <script defer src="js/index.js"></script>
-        <link rel="icon" type="image/svg" href="media/FaviconLumenStudioClaudiaPerez.svg">
         <!-- Línea para colocar el favicon de la web -->
-        <!-- líneas para colocar la tipo  -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/svg" href="media/FaviconLumenStudioClaudiaPerez.svg">
     </head>
     <body>
         <!--HEADER-->
+        <!-- En cada secciión contenedora se ha colocado la clase > mw (se verá repetida en cada sección contenedora), para limitar el ancho máximo y centrarlo horizontalmente -->
         <header class="header mw">
             <div class="header__logo">
-                <a href="index.html"><img class="logo" src="media/LogoLumenStudioClaudiaPerez.svg" alt="Logo Lumen"></a>
+                <a href="index.html" title="Home Page"><img class="logo" src="media/LogoLumenStudioClaudiaPerez.svg" alt="Logo Lumen"></a>
             </div>
-            <button class="btn__menu" id="menu__open" type="button"><img src="media/menuHamburg.svg" alt="Icon Menu"></button>
+            <!-- BOTÓN DE MENÚ: Botón que abre el menú de navegación, solo se visualiza en dispositivos + pequeños) -->
+            <button class="btn__menu" id="menu__open" type="button" title="Button Menu Open"><img src="media/menuHamburg.svg" alt="Icon Menu"></button>
+            <!-- Menú de navegación con los links a las páginas de la web -->
             <nav class="header__menu" id="menu">
-                <button class="btn__close" id="menu__close" type="button"><img src="media/menuClose.svg" alt="Icon Close"></button>
+                <!-- Botón que cierra el menú de navegación -->
+                <button class="btn__close" id="menu__close" type="button" title="Button Close"><img src="media/menuClose.svg" alt="Icon Close"></button>
+                <!-- Lista de links -->
                 <ul class="header__menu__links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About us</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.html" title="Home Page">Home</a></li>
+                    <li><a href="about.html" title="About Page">About us</a></li>
+                    <li><a href="portfolio.html" title="Portfolio Page">Portfolio</a></li>
+                    <li><a href="contact.html" title="Contact Page">Contact</a></li>
                 </ul>
             </nav>
         </header>
@@ -43,125 +46,294 @@
             </div>
         </section>
         <!-- MASONRY -->
+         <!-- Contenedor principal de masonry con clase mw (max-width) -->
         <div class="masonry mw">
+            <!-- bloque de masonry, grande. En el código de estilos se le especificará la cantidad de columnas y filas que ocupará-->
             <div class="masonry__block masonry__block--big">
-                <picture class="masonry__picture">
-                    <source srcset="media/couplesOne.webp">
-                    <img src="media/couplesOne.jpg" loading="lazy" alt="img1">
-                </picture>
+                <!-- el bloque contiene la etiqueta > figure que envuelve la imagen y a su vez se pueda colocar el elemento > figcaption -->
+                <figure class="masonry__picture">
+                     <!-- Elemento >picture para manejar diferentes fuentes de imagen como la webp-->
+                    <picture>
+                        <!-- Fuente de imagen alternativa en formato WebP -->
+                        <source srcset="media/couplesOne.webp">
+                        <!-- Imagen de respaldo en formato JPEG -->
+                        <img src="media/couplesOne.jpg" alt="Wedding Couple">                    
+                    </picture>
+                    <!-- Se ha utilizado el siguiente elemento > figcaption, que se tiene que colocar dentro de la etiqueta > figure para visualizar una leyenda de la imagen -->
+                    <figcaption>Wedding Couple Photography - Album</figcaption>
+                </figure>                
             </div> 
+            <!-- bloque de masonry, mediano. En el código de estilos se le especificará la cantidad de columnas y filas que ocupará -->
             <div class="masonry__block masonry__block--medium">
-                <picture class="masonry__picture">
-                    <source srcset="media/fashionGirl.webp">
-                    <img src="media/fashionGirl.jpg" loading="lazy" alt="img1">
-                </picture>
+                <figure class="masonry__picture">
+                    <picture>
+                        <source srcset="media/landscapesBuildingThree.webp">
+                        <img src="media/landscapesBuildingThree.jpg" alt="Skyscraper">            
+                    </picture>
+                    <figcaption>Skyscraper Photography - Landscape</figcaption>
+                </figure>
             </div> 
+            <!-- bloque de masonry, pequeño. En el código de estilos se le especificará la cantidad de columnas y filas que ocupará -->
             <div class="masonry__block masonry__block--small">
-                <picture class="masonry__picture">
-                    <source srcset="media/portraitBoy.webp">
-                    <img src="media/portraitBoy.jpg" loading="lazy" alt="img1">
-                </picture>
-            </div>              
+                <figure class="masonry__picture">
+                    <picture>
+                        <source srcset="media/portraitBoy.webp">
+                        <img src="media/portraitBoy.jpg" alt="Portrait Boy">                        
+                    </picture>
+                    <figcaption>Portrait of a Boy - Portrait</figcaption>
+                </figure>
+            </div>  
+            <!-- bloque de masonry, mediano. -->
+            <div class="masonry__block masonry__block--medium">
+                <figure class="masonry__picture">
+                    <picture>
+                        <source srcset="media/landscapesBuildingOne.webp">
+                        <img src="media/landscapesBuildingOne.jpg" alt="Skyscraper Counterpoint">            
+                    </picture>
+                    <figcaption>Photography Skyscraper Counterpoint- Landscape</figcaption>
+                </figure>                
+            </div>  
+            <!-- bloque de masonry, mediano. -->
+            <div class="masonry__block masonry__block--medium">
+                <figure class="masonry__picture">
+                    <picture>
+                        <source srcset="media/landscapesBuildingTwo.webp">
+                        <img src="media/landscapesBuildingTwo.jpg" alt="Skyscraper Counterpoint">                    
+                    </picture>
+                    <figcaption>Photography Skyscraper Counterpoint- Landscape</figcaption>
+                </figure>                
+            </div>          
+            <!-- bloque de masonry, grande. -->
             <div class="masonry__block masonry__block--big">
-                <picture class="masonry__picture">
-                    <source srcset="media/landscapesMachupichu.webp">
-                    <img src="media/landscapesMachupichu.jpg" loading="lazy" alt="img1">
-                </picture>
+                <figure class="masonry__picture">
+                    <picture>
+                        <source srcset="media/landscapesMachupichu.webp">
+                        <img src="media/landscapesMachupichu.jpg" alt="Machupichu">                    
+                    </picture>
+                    <figcaption>Photography Machupichu- Landscape</figcaption>
+                </figure>                
             </div>
-            
+            <!-- bloque de masonry, mediano. -->
             <div class="masonry__block masonry__block--medium">
-                <picture class="masonry__picture">
-                    <source srcset="media/cultureOldMenTwo.webp">
-                    <img src="media/cultureOldMenTwo.jpg" loading="lazy" alt="img1">
-                </picture>
+                <figure class="masonry__picture">
+                    <picture>
+                        <source srcset="media/cultureOldMenTwo.webp">
+                        <img src="media/cultureOldMenTwo.jpg" loading="lazy" alt="Peruvian Man">                    
+                    </picture>
+                    <figcaption>Photography Peruvian Man - Culture</figcaption>
+                </figure>                
             </div>
+            <!-- bloque de masonry, pequeño. -->
             <div class="masonry__block masonry__block--small">
-                <picture class="masonry__picture">
-                    <source srcset="media/couplesFour.webp">
-                    <img src="media/couplesFour.jpg" loading="lazy" alt="img1">
-                </picture>
+                <figure class="masonry__picture">
+                    <picture>
+                        <source srcset="media/couplesFour.webp">
+                        <img src="media/couplesFour.jpg" loading="lazy" alt="Wedding Couple">                    
+                    </picture>
+                    <figcaption>Wedding Couple Photography - Album</figcaption>
+                </figure>                
             </div>
+            <!-- bloque de masonry, mediano. -->
             <div class="masonry__block masonry__block--medium">
-                <picture class="masonry__picture">
-                    <source srcset="media/portraitGirl.webp">
-                    <img src="media/portraitGirl.jpg" loading="lazy" alt="img1">
-                </picture>
+                <figure class="masonry__picture">
+                    <picture>
+                        <source srcset="media/portraitGirl.webp">
+                        <img src="media/portraitGirl.jpg" loading="lazy" alt="Portrait Girl">                    
+                    </picture>
+                    <figcaption>Portrait of a Girl - Portrait</figcaption>
+                </figure>                
             </div>
+            <!-- bloque de masonry, grande. -->
             <div class="masonry__block masonry__block--big">
-                <picture class="masonry__picture">
-                    <source srcset="media/cultureGirl.webp">
-                    <img src="media/cultureGirl.jpg" loading="lazy" alt="img1">
-                </picture>
-            </div>              
+                <figure class="masonry__picture">
+                    <picture>
+                        <source srcset="media/cultureGirl.webp">
+                        <img src="media/cultureGirl.jpg" loading="lazy" alt="Girl Tribu">                        
+                    </picture>
+                    <figcaption>Photography Girl Tribu - Culture</figcaption>
+                </figure>                
+            </div>   
+            <!-- bloque de masonry, mediano. -->
             <div class="masonry__block masonry__block--medium">
-                <picture class="masonry__picture">
-                    <source srcset="media/couplesTwo.webp">
-                    <img src="media/couplesTwo.jpg" loading="lazy" alt="img1">
-                </picture>
-            </div>                  
+                <figure class="masonry__picture">
+                    <picture>
+                        <source srcset="media/couplesTwo.webp">
+                        <img src="media/couplesTwo.jpg" loading="lazy" alt="Wedding Couple">                        
+                    </picture>
+                    <figcaption>Wedding Couple Photography - Album</figcaption>
+                </figure>                
+            </div> 
+            <!-- bloque de masonry, pequeño -->
             <div class="masonry__block masonry__block--small">
-                <picture class="masonry__picture">
-                    <source srcset="media/couplesThree.webp">
-                    <img src="media/couplesThree.webp" loading="lazy" alt="img1">
-                </picture>
+                <figure class="masonry__picture">
+                    <picture>
+                        <source srcset="media/couplesThree.webp">
+                        <img src="media/couplesThree.webp" loading="lazy" alt="Couple">                        
+                    </picture>
+                    <figcaption>Couple Photography - Album</figcaption>
+                </figure>                
+            </div>     
+            <!-- bloque de masonry, pequeño -->
+            <div class="masonry__block masonry__block--small">
+                <figure class="masonry__picture">
+                    <picture>
+                        <source srcset="media/couplesFive.webp">
+                        <img src="media/couplesFive.jpg" loading="lazy" alt="Wedding Couple">                        
+                    </picture>
+                    <figcaption>Wedding Couple Photography - Album</figcaption>
+                </figure>                
+            </div>     
+            <!-- bloque de masonry, mediano. -->        
+            <div class="masonry__block masonry__block--medium">
+                <figure class="masonry__picture">
+                    <picture>
+                        <source srcset="media/fashionGirlFour.webp">
+                        <img src="media/fashionGirlFour.jpg" loading="lazy" alt="Afro Model">                        
+                    </picture>
+                    <figcaption>Afro Model Photography - Fashion</figcaption>
+                </figure>                
+            </div>  
+            <!-- bloque de masonry, mediano. -->
+            <div class="masonry__block masonry__block--medium">
+                <figure class="masonry__picture">
+                    <picture>
+                        <source srcset="media/fashionGirlThree.webp">
+                        <img src="media/fashionGirlThree.jpg" loading="lazy" alt="Magazine Model">                                                
+                    </picture>
+                    <figcaption>Magazine Model Photography - Fashion</figcaption>
+                </figure>                
+            </div> 
+            <!-- bloque de masonry, grande. -->
+            <div class="masonry__block masonry__block--big">
+                <figure class="masonry__picture">
+                    <picture>
+                        <source srcset="media/fashionGirlTwo.webp">
+                        <img src="media/fashionGirlTwo.jpg" loading="lazy" alt="Model Two">                        
+                    </picture>
+                    <figcaption>Model Photography - Fashion</figcaption>
+                </figure>                
             </div>       
+            <!-- bloque de masonry, grande. -->
             <div class="masonry__block masonry__block--big">
-                <picture class="masonry__picture">
-                    <source srcset="media/fashionGirlTwo.webp">
-                    <img src="media/fashionGirlTwo.jpg" loading="lazy" alt="img1">
-                </picture>
-            </div>        
-            <div class="masonry__block masonry__block--small">
-                <picture class="masonry__picture">
-                    <source srcset="media/couplesFive.webp">
-                    <img src="media/couplesFive.jpg" loading="lazy" alt="img1">
-                </picture>
-            </div>                        
+                <figure class="masonry__picture">
+                    <picture>
+                        <source srcset="media/cultureOldMenThree.webp">
+                        <img src="media/cultureOldMenThree.jpg" loading="lazy" alt="Old Man">                        
+                    </picture>
+                    <figcaption>Photography Old Man - Culture</figcaption>
+                </figure>                
+            </div> 
+            <!-- bloque de masonry, mediano. -->
+            <div class="masonry__block masonry__block--medium">
+                <figure class="masonry__picture">
+                    <picture>
+                        <source srcset="media/portraitGirlTwo.webp">
+                        <img src="media/portraitGirlTwo.jpg" loading="lazy" alt="Portrait Girl">                        
+                    </picture>
+                    <figcaption>Portrait B/W Girl - Portrait</figcaption>
+                </figure>                
+            </div> 
+            <!-- bloque de masonry, mediano. -->
+            <div class="masonry__block masonry__block--medium">
+                <figure class="masonry__picture">
+                    <picture>
+                        <source srcset="media/portraitGirlThree.webp">
+                        <img src="media/portraitGirlThree.jpg" loading="lazy" alt="Portrait Girl">                        
+                    </picture>
+                    <figcaption>Portrait B/W Girl - Portrait</figcaption>
+                </figure>                
+            </div>  
+            <!-- bloque de masonry, mediano. -->
+            <div class="masonry__block masonry__block--medium">
+                <figure class="masonry__picture">
+                    <picture>
+                        <source srcset="media/fashionGirl.webp">
+                        <img src="media/fashionGirl.jpg" loading="lazy" alt="Model Photography">                        
+                    </picture>
+                    <figcaption>Model Photography - Fashion</figcaption>
+                </figure>                
+            </div> 
+            <!-- bloque de masonry, mediano. --> 
+            <div class="masonry__block masonry__block--medium">
+                <figure class="masonry__picture">
+                    <picture>
+                        <source srcset="media/fashionBoy.webp">
+                        <img src="media/fashionBoy.jpg" loading="lazy" alt="Boy Model">                        
+                    </picture>
+                    <figcaption>Boy Model Photography - Fashion</figcaption>
+                </figure>                
+            </div>  
+            <!-- bloque de masonry, grande. -->
+            <div class="masonry__block masonry__block--big">
+                <figure class="masonry__picture">
+                    <picture>
+                        <source srcset="media/landscapesRocks.webp">
+                        <img src="media/landscapesRocks.jpg" loading="lazy" alt="Photography Rocks">                        
+                    </picture>
+                    <figcaption>Photography Rocks- Landscape</figcaption>
+                </figure>                
+            </div>                                      
         </div>
         <!-- FOOTER -->
         <footer class="footer appear">
             <div class="footer__container mw">
+                <!-- Contenedor de la primera columna de contenido en el footer -->
                 <div class="footer__content">
-                    <a href="index.html"><img src="media/LogoLumenStudioClaudiaPerez.svg" alt="Logo Lumen"></a>
+                    <a href="index.html" title="Home Page"><img src="media/LogoLumenStudioClaudiaPerez.svg" alt="Logo Lumen"></a>
                     <h2>"Where photography comes to life"</h2>
                     <p>We will be happy to capture your ideas and stories with our photography. Send us a message explaining the services you need. We will be pleased to answer you.</p>
                 </div>
+                <!-- Contenedor de la segunda columna de contenido en el footer (formulario de contacto) -->
                 <div class="footer__form">
                     <div class="footer__form footer__form--info">
-                        <form class="form">
+                        <!-- Formulario  -->
+                        <form action="#" method="post" class="form">
                             <div class="form__container">
+                                <!-- Campo para el nombre -->
                                 <div class="form__group">
-                                    <input type="text" placeholder="Name:" id="name" name="name" required>
+                                    <label for="nameOne">Name:</label>
+                                    <!-- el atributo > required obliga a que el campo sea completado -->
+                                    <input type="text" placeholder="Name:" id="nameOne" name="name" required>
                                 </div>
+                                <!-- Campo para el correo -->
                                 <div class="form__group">
-                                    <input type="email" placeholder="Email:" id="email" name="email" required>
+                                    <label for="emailOne">Email:</label>
+                                    <input type="email" placeholder="Email:" id="emailOne" name="email" required>
                                 </div>
                             </div>
-                            <button type="submit">Send</button>
+                            <!-- Botón de envío del formulario  -->
+                            <button type="submit" title="Button Submit">Send</button>
                         </form>
-                        <p>I certify that before contacting lumenstudio.com I have read and accept the terms of the <a href="#">Legal Notice</a>.</p>
+                        <!-- Texto con enlace para ver los términos legales -->
+                        <p>I certify that before contacting lumenstudio.com I have read and accept the terms of the <a href="#" title="Legal Notice">Legal Notice</a>.</p>
                     </div>
                 </div>
             </div>
+            <!-- línea de separación a los contenidos -->
             <div class="border mw"></div>
+            <!-- Bloque de navegación del footer -->
             <div class="footer__blockNav mw">
-                <a href="index.html"><img src="media/IconHome.svg" alt="icon">Home</a>
-                <a href="about.html"><img src="media/IconAboutus.svg" alt="icon">About us</a>
-                <a href="portfolio.html"><img src="media/IconWorks.svg" alt="icon">Portfolio</a>
-                <a href="contact.html"><img src="media/IconContactus.svg" alt="icon">Contact us</a>
+                <a href="index.html" title="Home Page"><img src="media/IconHome.svg" alt="icon">Home</a>
+                <a href="about.html" title="About Page"><img src="media/IconAboutus.svg" alt="icon">About us</a>
+                <a href="portfolio.html" title="Portfolio Page"><img src="media/IconWorks.svg" alt="icon">Portfolio</a>
+                <a href="contact.html" title="Contact Page"><img src="media/IconContactus.svg" alt="icon">Contact us</a>
             </div>
+            <!-- Bloque de redes sociales del footer -->
             <div class="footer__rrss mw">
-                <a href="#"><img src="media/IconIG.svg" alt="Icon Instagram"></a>
-                <a href="#"><img src="media/IconLink.svg" alt="Icon Linkedin"></a>
+                <a href="https://www.instagram.com/clandiip/?hl=es" title="Link Instagram" target="_blank" rel="noreferrer"><img src="media/IconIG.svg" alt="Icon Instagram"></a>
+                <a href="https://www.linkedin.com/in/clandiip/?originalSubdomain=es" title="Link Linkedin" target="_blank" rel="noreferrer"><img src="media/IconLink.svg" alt="Icon Linkedin"></a>
             </div>
+            <!-- línea de separación a los contenidos -->
             <div class="border mw"></div>
+            <!-- Bloque de texto legal del footer -->
             <div class="footer__legalText mw">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Cookie Policy</a>
-                <a href="#">Legal Notice</a>
+                <a href="#" title="Privacy Policy">Privacy Policy</a>
+                <a href="#" title="Cookie Policy">Cookie Policy</a>
+                <a href="#" title="Cookie Policy">Legal Notice</a>
             </div>
             <span class="copyRight mw">©LumenStudio 2024. All rights reserved</span>
         </footer>
-        <button id="btn__swipeUp">Up</button>
+        <!-- Botón interactivo posicionado al fianl de la pag, para permitir a los usuarios desplazarse hacia arriba en la pag. web -->
+        <button id="btn__swipeUp" title="Button SwipeUp">UP</button>
     </body>
 </html>
