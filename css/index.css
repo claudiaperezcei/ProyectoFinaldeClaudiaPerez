@@ -20,15 +20,16 @@
     --primary-color: #ffffff; /*color global primario*/
     --secondary-color: #32c6eb; /*color global secundario*/
     --background-color: #000000; /*color global base*/
-    /*tipografías*/
+    /*tipografías y tamaños*/
     --font-family-primary: "Roboto", sans-serif; /*tipografía para títulos*/
     --font-family-secondary: "Anton", sans-serif; /*tipografía para textos*/
+    --font-size-h1: 2.38rem;
     /*espacios*/
     --main-padding: 2em; /* padding general para varias secciones*/
     --max-width: 1200px; /*ancho global para la web*/
     /*galerías*/
-    /* --grid-responsive: repeat(auto-fit, minmax(250px, 1fr)); */
-    --grid-responsive: repeat(auto-fill, minmax(250px, 1fr));
+    --grid-responsive: repeat(auto-fit, minmax(250px, 1fr));
+    /* --grid-responsive: repeat(auto-fill, minmax(250px, 1fr)); */
 }
 /*RESET CSS para establecer los márgenes/paddings, conrolar los tamaños y los estilos*/
 * {    
@@ -52,12 +53,13 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--primary-color);
     font-family: var(--font-family-secondary);
 }
-p, a, span {
+p, a, span, figcaption {
     text-decoration: none;
     color: var(--primary-color);
     font-family: var(--font-family-primary);
 }
 .general__btn {
+    font-weight: bold;
     color: var(--primary-color);
     background-color: var(--secondary-color);
     padding: .5em 1em;
@@ -106,7 +108,7 @@ body {
 .btn__menu, .btn__close {
     display: none; /*para ocultar los botones del menu*/
 }
-@media (max-width: 700px) {     
+@media (max-width: 600px) {     
     .btn__menu, .btn__close {
         display: block; 
         border: 0;    
@@ -145,21 +147,30 @@ body {
 }
 /* BANNER */
 .banner {
+    position: relative;
     width: 100%;
     min-height: 70vh;
     animation: banner 7s infinite linear alternate;
-    /* -webkit-animation: banner 8s infinite linear alternate ease;
-    -moz-animation: banner 8s infinite linear alternate ease; */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    position: relative;
+    
     align-items: center;
+    display: flex;
+    overflow: hidden;
+}
+.banner__content h1 {
+    font-size: var(--font-size-h1);
+}
+@media (max-width: 600px) {
+    .banner__content h1 {
+        font-size: 1.5625rem;
+    }
 }
 /* BANNER ANIMADO */
 @keyframes banner{ 
     0%, 20%{
-        background-image: url(../media/cultureGirlBanner.jpg); /*Se establece la img de fondo, accediendo a los medios*/
+        background-image: url(../media/cultureGirlBanner.jpg);
     }
     25%, 45%{
         background-image: url(../media/landscapesMachupichu.jpg);
@@ -209,6 +220,23 @@ body {
 .sectionBanner {    
     background-image: linear-gradient(to bottom, #32c6eb, #000000);
     padding: var(--main-padding);
+    font-size: var(--font-size-h1);
+}
+@media (max-width: 600px) {
+    .sectionBanner {
+        padding: 1em;
+    }
+    .sectionBanner h1 {
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 900px) {
+    .sectionBanner {
+        padding: 1em;
+    }
+    .sectionBanner h1 {
+        font-size: 1.4rem;
+    }
 }
 /* SECTION ABOUT/EXPERIENCE */
 .about, .experience {
@@ -319,6 +347,7 @@ body {
     border-radius: 20px;  
     cursor: pointer;
     transition: background-color 0.3s ease;
+    background-color: transparent;
 }  
 .tab:hover {
     color: var(--primary-color);
@@ -337,6 +366,12 @@ body {
     padding: 1em;
     display: none;
 }  
+.tab__content p {
+    max-width: 650px;
+}
+.tab.active {
+    color: var(--primary-color);
+}
 .tab__content.active {
     flex-basis: 0;
     flex-grow: 1;
@@ -347,6 +382,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    color: var(--primary-color);
 }
 .tab__content.active p {
     text-align: center;
@@ -356,8 +392,6 @@ body {
 }
 /* SECTION BANNER MESSAGE */
 .message {
-    height: 30vh;
-    /* min-height: 400px; */
     background-image: url(../media/generalPhotoCapture.jpg);
     background-position: center;
     background-size: cover;
@@ -365,12 +399,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: var(--main-padding);
+    padding: 4em 0;
 }
 .message h3 {
     max-width: 450px;
     text-align: center;
-
 }
 /* SECTION BRANDS SLIDER */
 .slider {    
@@ -385,7 +418,6 @@ body {
 .slider__content {
     display: flex;
     animation: scroll 60s linear infinite;
-    /* -webkit-animation: scroll 60s linear infinite; */
     width: calc(200px * 21);
 }
 .slider__content--slide {
@@ -407,6 +439,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+} 
+.opinions h2 {
+    text-align: center;
+    display: flex;
+    align-items: center;
 }  
 .opinions p {
     max-width: 500px;
@@ -417,34 +454,37 @@ body {
     flex-wrap: wrap;
     justify-content: center;
 }  
-.opinion {
+.opinions__container--opi {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 20px;
+    margin: 2em;
     max-width: 250px;
     background-color: var(--primary-color);
     padding: var(--main-padding);    
     border-radius: 10px;
 }   
-.opinion h3 {
+.opinions__container--opi h3 {
     color: var(--background-color);
     font-weight: bold;
-    margin-bottom: 10px;
 }  
-.opinion p {
+.opinions__container--opi p {
     font-size: 16px;
     text-align: center;
     color: var(--background-color);
 }  
-.rating {
+.score {
+    flex-basis: 0;
+    flex-grow: 1;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    min-width: 250px;  
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
+    gap: 10px;   
 }
-.star {
+.score__star {
     width: 30px;
     color: var(--secondary-color);   
 }
@@ -531,6 +571,13 @@ body {
     padding: var(--main-padding);    
 }
 .masonry .masonry__picture {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+.masonry .masonry__picture img {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -547,20 +594,35 @@ body {
     grid-column: span 2;
     grid-row: span 2;
 }
+.masonry__picture figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--background-color);
+    color: var(--primary-color);
+    padding: var(--main-padding);
+    text-align: center;
+    opacity: 0; /* oculto */
+    transition: opacity 0.3s ease-in-out;
+}
+.masonry__picture:hover figcaption {
+    opacity: 1; /* Visible */
+}
 /* INDEX PORTFOLIO MASONRY RESPONSIVE DISP*/
-@media (max-width: 1200px) { 
+@media (max-width: 1110px) { 
     .masonry {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     }   
 }
-@media (max-width: 800px) { 
+@media (max-width: 700px) {
     .masonry {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }   
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
 }
-@media (max-width: 600px) {
+@media (max-width: 400px) {
     .masonry {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
 }
 /* FOOTER */
@@ -583,6 +645,11 @@ body {
     gap: 20px;
     text-align: center;
 }
+@media (max-width: 1150px) {
+    .footer__content, .footer__form {
+        padding: 1em;
+    }
+}
 .footer__content img {
     width: 120px;
 }
@@ -592,6 +659,7 @@ body {
 .footer__form--info, .form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 15px;
 }
 .footer__form--info a {
@@ -612,6 +680,9 @@ input {
     background-color: var(--background-color);
     border: none;
     border-bottom: 1px solid var(--primary-color);    
+}
+input::placeholder {
+    color: white;
 }
 #name {
     color: var(--primary-color);      
@@ -673,8 +744,6 @@ button:hover {
 }
 .footer__rrss img:hover{
     border-radius:50%;
-    /* prefijos webkit/moz/o son un tipo de filtro que permite que una instrucción CSS se aplique específicamente a un navegador o familia de navegadores */
-    /* -webkit-border-radius:50%; */
     /* box-shadow (para establecer sombras o resplandores)  */
     box-shadow: 0px 0px 7px 7px var(--secondary-color);    
 }
@@ -707,6 +776,7 @@ button:hover {
     align-items: center;
     justify-content: center;
     font-size: 16px;
+    font-weight: bold;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     animation: swipe-up 1s linear infinite;
     transition: background-color 0.3s;

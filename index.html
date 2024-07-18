@@ -10,6 +10,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Lumen Studio</title>
+        <meta name="description" content="Lumen Studio is a photography studio that captures unique and exciting moments. Discover our passion for photography and explore our services.">
         <link rel="stylesheet" href="css/index.css">
         <script defer src="js/index.js"></script>
         <link rel="icon" type="image/svg" href="media/FaviconLumenStudioClaudiaPerez.svg">
@@ -24,16 +25,16 @@
         <!--HEADER-->
         <header class="header mw">
             <div class="header__logo">
-                <a href="index.html"><img class="logo" src="media/LogoLumenStudioClaudiaPerez.svg" alt="Logo Lumen"></a>
+                <a href="index.html" title="Home Page"><img class="logo" src="media/LogoLumenStudioClaudiaPerez.svg" alt="Logo Lumen"></a>
             </div>
-            <button class="btn__menu" id="menu__open" type="button"><img src="media/menuHamburg.svg" alt="Icon Menu"></button>
+            <button class="btn__menu" id="menu__open" type="button" title="Button Menu Open"><img src="media/menuHamburg.svg" alt="Icon Menu"></button>
             <nav class="header__menu" id="menu">
-                <button class="btn__close" id="menu__close" type="button"><img src="media/menuClose.svg" alt="Icon Close"></button>
+                <button class="btn__close" id="menu__close" type="button" title="Button Close"><img src="media/menuClose.svg" alt="Icon Close"></button>
                 <ul class="header__menu__links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About us</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.html" title="Home Page">Home</a></li>
+                    <li><a href="about.html" title="About Page">About us</a></li>
+                    <li><a href="portfolio.html" title="Portfolio Page">Portfolio</a></li>
+                    <li><a href="contact.html" title="Contact Page">Contact</a></li>
                 </ul>
             </nav>
         </header>
@@ -44,10 +45,10 @@
                     <div class="banner__content">
                         <h1>WELCOME TO LUMEN STUDIO</h1>
                         <p>Where photography comes to life. Each image tells a unique story, capturing unrepeatable moments with art and creativity. We are passionate about transforming ordinary moments into extraordinary memories. Discover the power of a well-captured image with us.</p>
-                        <a class="general__btn" href="portfolio.html">See More</a>
+                        <a class="general__btn" href="portfolio.html" title="Button Prorfolio">Explore our Portfolio</a>
                     </div>
                 </div>
-            </div>
+            </div>           
         </section>
          <!-- SECTION TITLE: Da entrada a los diferentes apartados de la página principal -->
          <section class="sectionTitle appear">
@@ -69,7 +70,7 @@
                 <p class="appear">At Lumen Studio, we specialize in capturing life's most precious moments with a dedication to excellence and creativity. Founded with a passion for photography, our studio is a benchmark in imaging. We believe every photograph tells a story, and our team uses advanced techniques and an artistic approach to ensure perfection in every shot.</p>
                 <p class="appear">We offer a wide range of services, including portrait, event, landscape, fashion, and cultural photography, all with a focus on quality and customer satisfaction. Our photographers have a keen eye for detail and a deep understanding of capturing meaningful moments. Our post-production team enhances each image to create polished, professional photos, paying close attention to color correction and retouching.</p>
                 <p class="appear">In addition to our photography services, we offer personalized photo albums and high-quality prints to help you preserve your memories beautifully and lastingly. At Lumen Studio, we are more than just photographers; we are storytellers dedicated to preserving your memories authentically and beautifully.</p>
-                <a class="general__btn appear" href="about.html">Read more</a>
+                <a class="general__btn appear" href="about.html" title="Button About">Learn about our background and experience</a>
             </div>
         </section>
         <!-- SECTION TITLE: Da entrada a los diferentes apartados de la página principal -->
@@ -81,16 +82,16 @@
         <!-- SECTION SERVICES TABS: se ha implementado una sección a base de pestañas, para explicar los servicios que se ofrecen -->
         <div class="services mw appear">
             <div class="services__tabs">
-                <a class="tab" data-target="tabOne">Fashion<img src="media/iconCamera.svg" alt="Icon Camera"></a>
-                <a class="tab" data-target="tabTwo">Portrait<img src="media/iconPortrait.svg" alt="Icon Portrait"></a>
-                <a class="tab" data-target="tabthree">Culture<img src="media/iconCamera.svg" alt="Icon Camera"></a>
-                <a class="tab" data-target="tabFour">Landscape<img src="media/iconLandscape.svg" alt="Icon LandScape"></a>
-                <a class="tab" data-target="tabFive">Albun<img src="media/inconBookmark.svg" alt="Icon Bookmark"></a>
+                <button class="tab" data-target="tabOne" title="Tab One">Fashion<img src="media/iconCamera.svg" alt="Icon Camera"></button>
+                <button class="tab" data-target="tabTwo" title="Tab One">Portrait<img src="media/iconPortrait.svg" alt="Icon Portrait"></button>
+                <button class="tab" data-target="tabthree" title="Tab One">Culture<img src="media/iconCamera.svg" alt="Icon Camera"></button>
+                <button class="tab" data-target="tabFour" title="Tab One">Landscape<img src="media/iconLandscape.svg" alt="Icon LandScape"></button>
+                <button class="tab" data-target="tabFive" title="Tab One">Albun<img src="media/inconBookmark.svg" alt="Icon Bookmark"></button>
             </div>
             <div class="border mw"></div>
             <div class="services__content">
                 <!-- En estas clases se ha incluido "active" que ha creado en el archivo JS  -->
-                <div id="tabOne" class="tab__content active">
+                <div id="tabOne" class="tab__content">
                     <p>Our Fashion Photography captures the essence and style of contemporary fashion. We work with designers, models, and brands to create striking images that highlight the latest trends and reflect the unique identity of each collection.</p>
                     <picture>
                         <source srcset="media/fashionGirlTwo.webp">
@@ -249,35 +250,35 @@
             <h2>CUSTOMER REVIEWS</h2>
             <p>At Lumen Studio, customer satisfaction is our top priority. We take pride in receiving positive feedback and are delighted to share some of the experiences our clients have had with us.</p>
             <div class="opinions__container">
-                <div class="opinion">
+                <div class="opinions__container--opi">
                     <h3>María López:</h3>
-                    <div class="rating">
-                        <img class="star" src="media/IconStarColor.svg" alt="star">
-                        <img class="star" src="media/IconStarColor.svg" alt="star">
-                        <img class="star" src="media/IconStarColor.svg" alt="star">
-                        <img class="star" src="media/IconStarColor.svg" alt="star">
-                        <img class="star" src="media/IconStarColor.svg" alt="star">
+                    <div class="score">
+                        <img class="score__star" src="media/IconStarColor.svg" alt="star">
+                        <img class="score__star" src="media/IconStarColor.svg" alt="star">
+                        <img class="score__star" src="media/IconStarColor.svg" alt="star">
+                        <img class="score__star" src="media/IconStarColor.svg" alt="star">
+                        <img class="score__star" src="media/IconStarColor.svg" alt="star">
                     </div>
                     <p>"Lumen Studio captured the essence of our special day in a way I never imagined. Each photo is a work of art, filled with emotion and detail. We are thrilled with the results!"</p>
                 </div>
-                <div class="opinion">
+                <div class="opinions__container--opi">
                     <h3>Carlos Méndez:</h3>
-                    <div class="rating">
-                        <img class="star" src="media/IconStarColor.svg" alt="star">
-                        <img class="star" src="media/IconStarColor.svg" alt="star">
-                        <img class="star" src="media/IconStarColor.svg" alt="star">
-                        <img class="star" src="media/IconStarColor.svg" alt="star">
+                    <div class="score">
+                        <img class="score__star" src="media/IconStarColor.svg" alt="star">
+                        <img class="score__star" src="media/IconStarColor.svg" alt="star">
+                        <img class="score__star" src="media/IconStarColor.svg" alt="star">
+                        <img class="score__star" src="media/IconStarColor.svg" alt="star">
                     </div>
                     <p>"Working with Lumen Studio was an incredible experience. Their professionalism and attention to detail made our photo session perfect. The images are simply stunning."</p>
                 </div>
-                <div class="opinion">
+                <div class="opinions__container--opi">
                     <h3>Clara Ruiz:</h3>
-                    <div class="rating">
-                        <img class="star" src="media/IconStarColor.svg" alt="star">
-                        <img class="star" src="media/IconStarColor.svg" alt="star">
-                        <img class="star" src="media/IconStarColor.svg" alt="star">
-                        <img class="star" src="media/IconStarColor.svg" alt="star">
-                        <img class="star" src="media/IconStarColor.svg" alt="star">
+                    <div class="score">
+                        <img class="score__star" src="media/IconStarColor.svg" alt="star">
+                        <img class="score__star" src="media/IconStarColor.svg" alt="star">
+                        <img class="score__star" src="media/IconStarColor.svg" alt="star">
+                        <img class="score__star" src="media/IconStarColor.svg" alt="star">
+                        <img class="score__star" src="media/IconStarColor.svg" alt="star">
                     </div>
                     <p>"The photos from my portrait session exceeded all my expectations. Lumen Studio has a unique talent for capturing the true essence of a person. I will definitely recommend them to all my friends!"</p>
                 </div>
@@ -287,47 +288,49 @@
         <footer class="footer appear">
             <div class="footer__container mw">
                 <div class="footer__content">
-                    <a href="index.html"><img src="media/LogoLumenStudioClaudiaPerez.svg" alt="Logo Lumen"></a>
+                    <a href="index.html" title="Home Page"><img src="media/LogoLumenStudioClaudiaPerez.svg" alt="Logo Lumen"></a>
                     <h2>"Where photography comes to life"</h2>
                     <p>We will be happy to capture your ideas and stories with our photography. Send us a message explaining the services you need. We will be pleased to answer you.</p>
                 </div>
                 <div class="footer__form">
                     <div class="footer__form footer__form--info">
-                        <form class="form">
+                        <form action="#" method="post" class="form">
                             <div class="form__container">
                                 <div class="form__group">
-                                    <input type="text" placeholder="Name:" id="name" name="name" required>
+                                    <label for="nameOne">Name:</label>
+                                    <input type="text" placeholder="Name:" id="nameOne" name="name" required>
                                 </div>
                                 <div class="form__group">
-                                    <input type="email" placeholder="Email:" id="email" name="email" required>
+                                    <label for="emailOne">Email:</label>
+                                    <input type="email" placeholder="Email:" id="emailOne" name="email" required>
                                 </div>
                             </div>
-                            <button type="submit">Send</button>
+                            <button type="submit" title="Button Submit">Send</button>
                         </form>
-                        <p>I certify that before contacting lumenstudio.com I have read and accept the terms of the <a href="#">Legal Notice</a>.</p>
+                        <p>I certify that before contacting lumenstudio.com I have read and accept the terms of the <a href="#" title="Legal Notice">Legal Notice</a>.</p>
                     </div>
                 </div>
             </div>
             <div class="border mw"></div>
             <div class="footer__blockNav mw">
-                <a href="index.html"><img src="media/IconHome.svg" alt="icon">Home</a>
-                <a href="about.html"><img src="media/IconAboutus.svg" alt="icon">About us</a>
-                <a href="portfolio.html"><img src="media/IconWorks.svg" alt="icon">Portfolio</a>
-                <a href="contact.html"><img src="media/IconContactus.svg" alt="icon">Contact us</a>
+                <a href="index.html" title="Home Page"><img src="media/IconHome.svg" alt="icon">Home</a>
+                <a href="about.html" title="About Page"><img src="media/IconAboutus.svg" alt="icon">About us</a>
+                <a href="portfolio.html" title="Portfolio Page"><img src="media/IconWorks.svg" alt="icon">Portfolio</a>
+                <a href="contact.html" title="Contact Page"><img src="media/IconContactus.svg" alt="icon">Contact us</a>
             </div>
             <div class="footer__rrss mw">
-                <a href="#"><img src="media/IconIG.svg" alt="Icon Instagram"></a>
-                <a href="#"><img src="media/IconLink.svg" alt="Icon Linkedin"></a>
+                <a href="https://www.instagram.com/clandiip/?hl=es" title="Link Instagram" target="_blank" rel="noreferrer"><img src="media/IconIG.svg" alt="Icon Instagram"></a>
+                <a href="https://www.linkedin.com/in/clandiip/?originalSubdomain=es" title="Link Linkedin" target="_blank" rel="noreferrer"><img src="media/IconLink.svg" alt="Icon Linkedin"></a>
             </div>
             <div class="border mw"></div>
             <div class="footer__legalText mw">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Cookie Policy</a>
-                <a href="#">Legal Notice</a>
+                <a href="#" title="Privacy Policy">Privacy Policy</a>
+                <a href="#" title="Cookie Policy">Cookie Policy</a>
+                <a href="#" title="Cookie Policy">Legal Notice</a>
             </div>
             <span class="copyRight mw">©LumenStudio 2024. All rights reserved</span>
         </footer>
-        <button id="btn__swipeUp">Up</button>
+        <button id="btn__swipeUp" title="Button SwipeUp">Up</button>
     </body>
 
 </html>
