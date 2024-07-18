@@ -10,25 +10,27 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>About Us</title>
+        <!-- Metadescripciones para resumir el contenido de la página -->
         <meta name="description" content="Meet Lumen Studio, a team of passionate photographers who capture unique and exciting moments. Discover our history, our values and our passion for photography.">
         <link rel="stylesheet" href="css/index.css">
         <script defer src="js/index.js"></script>
-        <link rel="icon" type="image/svg" href="media/FaviconLumenStudioClaudiaPerez.svg">
         <!-- Línea para colocar el favicon de la web -->
-        <!-- líneas para colocar la tipo  -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/svg" href="media/FaviconLumenStudioClaudiaPerez.svg">
     </head>
     <body>
         <!--HEADER-->
+        <!-- En cada secciión contenedora se ha colocado la clase > mw (se verá repetida en cada sección contenedora), para limitar el ancho máximo y centrarlo horizontalmente -->
         <header class="header mw">
             <div class="header__logo">
                 <a href="index.html" title="Home Page"><img class="logo" src="media/LogoLumenStudioClaudiaPerez.svg" alt="Logo Lumen"></a>
             </div>
+            <!-- BOTÓN DE MENÚ: Botón que abre el menú de navegación, solo se visualiza en dispositivos + pequeños) -->
             <button class="btn__menu" id="menu__open" type="button" title="Button Menu Open"><img src="media/menuHamburg.svg" alt="Icon Menu"></button>
+            <!-- Menú de navegación con los links a las páginas de la web -->
             <nav class="header__menu" id="menu">
+                <!-- Botón que cierra el menú de navegación -->
                 <button class="btn__close" id="menu__close" type="button" title="Button Close"><img src="media/menuClose.svg" alt="Icon Close"></button>
+                <!-- Lista de links -->
                 <ul class="header__menu__links">
                     <li><a href="index.html" title="Home Page">Home</a></li>
                     <li><a href="about.html" title="About Page">About us</a></li>
@@ -43,27 +45,39 @@
                 <h1>ABOUT US</h1>
             </div>
         </section>
-        <!-- SECTION ABOUT -->
-        <section class="about mw">            
+        <!-- SECTION ABOUT con clase mw (max-width) -->
+        <!-- Contenedor principal de About -->
+        <section class="about mw">
+            <!-- Bloque de información -->
             <div class="about__info">
                 <h2>IMAGES THAT SPEAK FOR THEMSELVES</h2>
                 <p>At Lumen Studio, we specialize in capturing life's most precious moments with a dedication to excellence and creativity. Founded with a passion for photography, our studio has become a benchmark in the world of imaging. We believe that every photograph tells a story, and our mission is to create images that speak for themselves.</p>
                 <p>Our team of professional photographers employs the most advanced techniques and an artistic approach to ensure that every shot is perfect. From the moment you step into our studio, you will experience our commitment to understanding your vision and bringing it to life. Whether it's a wedding, a family portrait, or a special event, we approach each project with meticulous care and creativity.</p>  
             </div>
+            <!-- Bloque de imagen -->
             <div class="about__img">
+                <!-- Elemento >picture para manejar diferentes fuentes de imagen como la webp-->
                 <picture>
+                    <!-- Fuente de imagen alternativa en formato WebP -->
                     <source srcset="media/generalCaptureMoment.webp">
+                    <!-- Imagen de respaldo en formato JPEG -->
                     <img src="media/generalCaptureMoment.jpg" alt="Studio Photo">
                 </picture>
             </div>
         </section>
+        <!-- Contenedor secundario de About con clase mw (max-width)-->
         <section class="about mw">
+            <!-- Bloque de imagen -->
             <div class="about__img">
+                <!-- Elemento >picture para manejar diferentes fuentes de imagen como la webp-->
                 <picture>
+                    <!-- Fuente de imagen alternativa en formato WebP -->
                     <source srcset="media/generalStudioBW.webp">
+                    <!-- Imagen de respaldo en formato JPEG -->
                     <img src="media/generalStudioBW.jpg" alt="Studio Photo">
                 </picture>
-            </div>            
+            </div>
+            <!-- Bloque de información -->            
             <div class="about__info">
                 <h2>ATTENTION TO DETAIL</h2>
                 <p>Beyond portrait and event photography, we offer a diverse range of services, including landscape, fashion, and cultural photography. Each genre is treated with the same dedication to quality and creativity, ensuring that we deliver stunning images regardless of the subject matter. Our photographers are not only technically skilled but also have a keen eye for detail and a deep understanding of how to capture the emotions and moments that matter most.</p>
@@ -73,7 +87,9 @@
             </div>            
         </section>
         <!-- SECTION BRANDS SLIDER -->
+        <!-- Contenedor principal del slider -->
         <div class="slider">
+            <!-- Contenedor que agrupa todos los sliders -->
             <div class="slider__container">
                 <div class="slider__content">
                     <div class="slider__content slider__content--slide">
@@ -149,7 +165,9 @@
                 <p>With over a decade of experience in the photography industry, Lumen Studio has worked on a wide variety of projects, from intimate portrait sessions to large advertising campaigns. Our dedication to excellence and commitment to innovation have allowed us to remain at the forefront of professional photography.</p>
                 <div class="experience__info experience__info--colaborators">
                     <p>Over the years, we have had the honor of collaborating with numerous renowned companies and brands, delivering results that exceed expectations. Here are some of the companies we have worked with:</p>
+                     <!-- Contenedor principal de colaboradores -->
                     <div class="colaborators__container">
+                        <!-- Bloque de colaboradores -->
                         <div class="colaborators__block">
                             <div class="colaborators__block colaborators__block--icons appear">
                                 <img src="media/BrandMcp.svg" alt="M.C.P">
@@ -171,9 +189,13 @@
                     </div>                   
                 </div>                
             </div>
+            <!-- Contenedor de imagen -->
             <div class="experience__img">
+                <!-- Elemento >picture para manejar diferentes fuentes de imagen como la webp-->
                 <picture>
+                    <!-- Fuente de imagen alternativa en formato WebP -->
                     <source srcset="media/generalStudioColor.webp">
+                    <!-- Imagen de respaldo en formato JPEG -->
                     <img src="media/generalStudioColor.jpg" loading="lazy" alt="Studio Photo">
                 </picture>
             </div>
@@ -181,42 +203,55 @@
         <!-- FOOTER -->
         <footer class="footer appear">
             <div class="footer__container mw">
+                <!-- Contenedor de la primera columna de contenido en el footer -->
                 <div class="footer__content">
                     <a href="index.html" title="Home Page"><img src="media/LogoLumenStudioClaudiaPerez.svg" alt="Logo Lumen"></a>
                     <h2>"Where photography comes to life"</h2>
                     <p>We will be happy to capture your ideas and stories with our photography. Send us a message explaining the services you need. We will be pleased to answer you.</p>
                 </div>
+                <!-- Contenedor de la segunda columna de contenido en el footer (formulario de contacto) -->
                 <div class="footer__form">
                     <div class="footer__form footer__form--info">
+                        <!-- Formulario  -->
                         <form action="#" method="post" class="form">
                             <div class="form__container">
+                                <!-- Campo para el nombre -->
                                 <div class="form__group">
                                     <label for="nameOne">Name:</label>
+                                    <!-- el atributo > required obliga a que el campo sea completado -->
                                     <input type="text" placeholder="Name:" id="nameOne" name="name" required>
                                 </div>
+                                <!-- Campo para el correo -->
                                 <div class="form__group">
                                     <label for="emailOne">Email:</label>
                                     <input type="email" placeholder="Email:" id="emailOne" name="email" required>
                                 </div>
                             </div>
+                            <!-- Botón de envío del formulario  -->
                             <button type="submit" title="Button Submit">Send</button>
                         </form>
+                        <!-- Texto con enlace para ver los términos legales -->
                         <p>I certify that before contacting lumenstudio.com I have read and accept the terms of the <a href="#" title="Legal Notice">Legal Notice</a>.</p>
                     </div>
                 </div>
             </div>
+            <!-- línea de separación a los contenidos -->
             <div class="border mw"></div>
+            <!-- Bloque de navegación del footer -->
             <div class="footer__blockNav mw">
                 <a href="index.html" title="Home Page"><img src="media/IconHome.svg" alt="icon">Home</a>
                 <a href="about.html" title="About Page"><img src="media/IconAboutus.svg" alt="icon">About us</a>
                 <a href="portfolio.html" title="Portfolio Page"><img src="media/IconWorks.svg" alt="icon">Portfolio</a>
                 <a href="contact.html" title="Contact Page"><img src="media/IconContactus.svg" alt="icon">Contact us</a>
             </div>
+            <!-- Bloque de redes sociales del footer -->
             <div class="footer__rrss mw">
                 <a href="https://www.instagram.com/clandiip/?hl=es" title="Link Instagram" target="_blank" rel="noreferrer"><img src="media/IconIG.svg" alt="Icon Instagram"></a>
                 <a href="https://www.linkedin.com/in/clandiip/?originalSubdomain=es" title="Link Linkedin" target="_blank" rel="noreferrer"><img src="media/IconLink.svg" alt="Icon Linkedin"></a>
             </div>
+            <!-- línea de separación a los contenidos -->
             <div class="border mw"></div>
+            <!-- Bloque de texto legal del footer -->
             <div class="footer__legalText mw">
                 <a href="#" title="Privacy Policy">Privacy Policy</a>
                 <a href="#" title="Cookie Policy">Cookie Policy</a>
@@ -224,6 +259,7 @@
             </div>
             <span class="copyRight mw">©LumenStudio 2024. All rights reserved</span>
         </footer>
-        <button id="btn__swipeUp" title="Button SwipeUp">Up</button>
+        <!-- Botón interactivo posicionado al fianl de la pag, para permitir a los usuarios desplazarse hacia arriba en la pag. web -->
+        <button id="btn__swipeUp" title="Button SwipeUp">UP</button>
     </body>
 </html>

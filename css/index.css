@@ -28,8 +28,8 @@
     --main-padding: 2em; /* padding general para varias secciones*/
     --max-width: 1200px; /*ancho global para la web*/
     /*galerías*/
+    /* el auto fit: ajusta automáticamente el número de columnas para llenar el espacio disponible, un ancho min (minmax) y se expande 1 fracción, para adapatar las img a su contenedor*/
     --grid-responsive: repeat(auto-fit, minmax(250px, 1fr));
-    /* --grid-responsive: repeat(auto-fill, minmax(250px, 1fr)); */
 }
 /*RESET CSS para establecer los márgenes/paddings, conrolar los tamaños y los estilos*/
 * {    
@@ -40,48 +40,52 @@
 img {
     max-width:100%;
 }
+/* clase para limitar el ancho máximo y centrarlo horizontalmente */
 .mw {
     max-width: var(--max-width);
     margin: 0 auto;
 }
 ul li {
-    list-style: none;
-    color: var(--primary-color);
-    font-family: var(--font-family-secondary);
+    list-style: none; /*Elimina los estilos predeterminados*/
+    color: var(--primary-color); /*color de variable CSS personalizada*/
+    font-family: var(--font-family-secondary); /*fuente de variable CSS personalizada*/
 }
 h1, h2, h3, h4, h5, h6 {
     color: var(--primary-color);
     font-family: var(--font-family-secondary);
 }
+/* además de los p, a y span, al elemento figcation, que es la leyenda que aparecerá en las img de la galería del portfolio, se le aplicarán los siguientes estilos */
 p, a, span, figcaption {
     text-decoration: none;
     color: var(--primary-color);
     font-family: var(--font-family-primary);
 }
+/* Estilo global para los botones generales de la web */
 .general__btn {
     font-weight: bold;
     color: var(--primary-color);
     background-color: var(--secondary-color);
     padding: .5em 1em;
     border-radius: 25px;
-    transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+    /* Transicion definiendo la transformación, color de texto y color de fondo */
+    transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease; 
 }
 .general__btn:hover {
     color: var(--secondary-color);
     background-color: var(--primary-color);
     padding: .5em 1em;
     border-radius: 25px;
-    transform: scale(1.1);
-
+    transform: scale(1.1); /*Escala el botón al hacer hover para crear un efecto de aumento*/
 }
 body {
     background-color: var(--background-color);
 }
+/* aplica una transición suave en la opacidad de los elementos que contenga esta clase */
 .appear {
     opacity: 0;
     transition: opacity .8s;
 }
-/* HEADER*/
+/* ESTILOS PARA EL HEADER*/
 .header {    
     display: flex;    
     justify-content: space-between;
@@ -98,43 +102,46 @@ body {
 .header__menu__links a {    
     color: var(--secondary-color); /*se llama a la variable creadda en root*/
 }
+/* hover para la interacción de los links */
 .header__menu__links a:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
+    text-decoration: underline; /* Subrayado del texto al hacer hover */
+    text-decoration-thickness: 2px; /* Grosor del subrayado */
     text-decoration-color: var(--primary-color);
-    text-underline-offset: 5px;   
+    text-underline-offset: 5px; /* Distancia del subrayado del texto */
 }
-/* HEADER ESTABLECER EL RESPONSIVE - DISP MOVILES*/
+/* HEADER - ESTABLECER EL RESPONSIVE - DISP MOVILES*/
 .btn__menu, .btn__close {
     display: none; /*para ocultar los botones del menu*/
 }
+/* Estilo específico para dispositivos con (máximo 600px) */
 @media (max-width: 600px) {     
     .btn__menu, .btn__close {
-        display: block; 
+        display: block; /*Mostrar el bloque*/
         border: 0;    
         background-color: transparent;  
         cursor: pointer;
     }
     .header__menu {
-        opacity: 0;
-        visibility: hidden;
-        z-index: 6;
+        opacity: 0; /* Ocultar el menú haciendo que sea completamente transparente */
+        visibility: hidden; /* Hace que el menú no se visualice */
+        z-index: 6; /*para definir el nivel de superposición sobre otros elementos*/
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 20px;        
-        position: absolute;
-        top: 0;
+        position: absolute; /*Posiciona el menú con respecto a su contenedor con posición relativa*/
+        /*alineamientos*/
+        top: 0; 
         right: 0;
         bottom: 0;
-        height: 100vh;
-        width: 90%;
+        height: 100vh; /* Altura igual al 100% del viewport */
+        width: 90%; /* Ancho del 90% del contenedor */
         background-color: var(--secondary-color);
         padding: var(--main-padding);        
     }
     .header__menu.visible {
-        opacity: 1;
-        visibility: visible;
+        opacity: 1; /* Hace el menú completamente visible */
+        visibility: visible; /* Hace el menú visible */
     }
     .header__menu__links {
         display: flex;
@@ -145,45 +152,33 @@ body {
         color: var(--primary-color);
     } 
 }
-/* BANNER */
+/* ESTILOS BANNER */
 .banner {
-    position: relative;
-    width: 100%;
-    min-height: 70vh;
-    animation: banner 7s infinite linear alternate;
+    background-image: url(../media/cultureGirlBanner.webp); /*se establece la imagen de fondo, para que aparezca al inicio*/
+    position: relative; /* Posición para que los elementos con absolut se ubiquen en relación con este contenedor */
+    width: 100%; /* Ancho completo*/
+    min-height: 70vh; /* Altura mínima del viewport */
+    transition: background-image 6s linear; /*se establece una transición de manera linear*/
+    /* ajustes de la img */
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
-    
+    background-repeat: no-repeat;    
     align-items: center;
     display: flex;
-    overflow: hidden;
+    overflow: hidden; /*para ocultar la barra horizontal*/
 }
 .banner__content h1 {
-    font-size: var(--font-size-h1);
+    font-size: var(--font-size-h1); /*asignar el tamaño de fuente al H1*/
 }
+/* Estilo específico para dispositivos con (máximo 600px) */
 @media (max-width: 600px) {
     .banner__content h1 {
-        font-size: 1.5625rem;
+        font-size: 1.5625rem; /* Tamaño de fuente reducido para dispositivos móviles */
     }
 }
-/* BANNER ANIMADO */
-@keyframes banner{ 
-    0%, 20%{
-        background-image: url(../media/cultureGirlBanner.jpg);
-    }
-    25%, 45%{
-        background-image: url(../media/landscapesMachupichu.jpg);
-    }
-    50%, 70%{
-        background-image: url(../media/couplesOne.jpg);
-    }
-    75%, 100%{
-        background-image: url(../media/portraitBoy.jpg);
-    }
-}
+/* Capa de superposición, para ayudar a que el bloque de texto sea más legible */
 .layer__overlay {
-    position: absolute;
+    position: absolute; /* cubre todo el banner */
     top: 0;
     left: 0;
     display: flex;
@@ -191,25 +186,27 @@ body {
     justify-content: center;
     width: 100%;
     height: 100%;    
-    background: rgba(0, 0, 0, .6);
+    background: rgba(0, 0, 0, .7); /*da opacidad*/
+    transition: opacity 6s;
 }
+/* Bloque de contenido del banner */
 .banner__content {
-    flex-basis: 0;
-    flex-grow: 1;
-    margin: 0 auto;
+    flex-basis: 0; /*se establece en 0 para permitir que el elemento crezca */
+    flex-grow: 1; /* Permite que el elemento crezca para llenar el espacio disponible */
+    margin: 0 auto; /* Margen automático para centrar horizontalmente */
     flex-wrap: wrap;
-    min-width: 250px;  
-    max-width: 500px;
+    min-width: 250px; /* Ancho min del contenedor */  
+    max-width: 500px; /* Ancho max del contenedor */
     display: flex;
     flex-direction: column;
     gap: 10px;
-    z-index: 5;
+    z-index: 4;
     text-align: center;  
     padding: var(--main-padding);
 }
 /* SECTION TITLES/BANNER PAGES */
 .sectionTitle {    
-    background-image: linear-gradient(to right, #000000, #32c6eb, #000000); /*se crea un degradado*/
+    background-image: linear-gradient(to right, #000000, #32c6eb, #000000); /*se crea un degradado centrado*/
     padding: var(--main-padding);
 }
 .sectionTitle__content, .sectionBaneer__content {
@@ -218,16 +215,17 @@ body {
     align-items: center;
 }
 .sectionBanner {    
-    background-image: linear-gradient(to bottom, #32c6eb, #000000);
+    background-image: linear-gradient(to bottom, #32c6eb, #000000); /*degradado lineal*/
     padding: var(--main-padding);
     font-size: var(--font-size-h1);
 }
+/* Estilos específicos para el H1 en dispositivos con (máximo 600px/900px) */
 @media (max-width: 600px) {
     .sectionBanner {
         padding: 1em;
     }
     .sectionBanner h1 {
-        font-size: 1.5rem;
+        font-size: 1.5rem; /* Tamaño de fuente reducido para dispositivos móviles */
     }
 }
 @media (max-width: 900px) {
@@ -235,16 +233,16 @@ body {
         padding: 1em;
     }
     .sectionBanner h1 {
-        font-size: 1.4rem;
+        font-size: 1.4rem; /* Tamaño de fuente reducido para dispositivos móviles */
     }
 }
-/* SECTION ABOUT/EXPERIENCE */
+/* ESTILOS PARA SECTION ABOUT/EXPERIENCE */
 .about, .experience {
-    flex-basis: 0;
-    flex-grow: 1;
-    margin: 0 auto;
+    flex-basis: 0; /*Permite que el elemento crezca */
+    flex-grow: 1; /* Para llenar el espacio disponible */
+    margin: 0 auto; /* Margen automático para centrar horizontalmente */
     flex-wrap: wrap;
-    min-width: 250px;  
+    min-width: 250px; /* Ancho min del contenedor */  
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -252,7 +250,7 @@ body {
     padding: var(--main-padding);
 }
 .experience__info--icon img {
-    width: 70px;
+    width: 70px; /*tamaño para las imágenes de iconos*/
 }
 .experience__info--colaborators ul {
     display: flex;
@@ -267,7 +265,7 @@ body {
     width: 30px;
 }
 .about__img, .experience__img {
-    max-width: 600px;
+    max-width: 600px; /* Ancho max para las imágenes */
 }
 .about__img, .experience__img img {    
     object-fit: cover;  /* La imagen se ajusta*/  
@@ -276,7 +274,7 @@ body {
     background-repeat: no-repeat;
 }
 .about__info, .experience__info {
-    max-width: 500px;
+    max-width: 500px; /* Ancho max para la info */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -284,7 +282,7 @@ body {
     text-align: center;
     gap: 15px;  
 }
-/* SECTION EXPERIENCES */
+/* ESTILOS PARA SECTION EXPERIENCES */
 .colaborators__container {    
     display: flex;
     flex-direction: column;    
@@ -317,7 +315,7 @@ body {
     font-style: italic;
 }
 
-/* SECTION SERVICES TABS */
+/* ESTILOS PARA SECTION SERVICES TABS */
 .services { 
     flex-basis: 0;
     flex-grow: 1;
@@ -327,6 +325,7 @@ body {
     margin: 0 auto;
     padding: var(--main-padding);
 }  
+/* estilos para el bloque de pestañas */
 .services__tabs {
     flex-basis: 0;
     flex-grow: 1;
@@ -336,25 +335,28 @@ body {
     display: flex;
     justify-content: space-around;
     padding: var(--main-padding);
-}  
+} 
+ /*estilos para cada pestaña  */
 .tab {
     display: flex;
     justify-content: center;
     gap: 15px;
     font-size: 1.25rem;
     color: var(--secondary-color);
-    padding: 10px 20px;
-    border-radius: 20px;  
+    padding: 1em;
+    border-radius: 30px;  
     cursor: pointer;
     transition: background-color 0.3s ease;
-    background-color: transparent;
+    background-color: transparent; /*para quitar el bg del botón por defecto*/
 }  
+/* estilo para la intercacción */
 .tab:hover {
     color: var(--primary-color);
     background-color: var(--secondary-color);
-    border-radius: 20px;   
+    border-radius: 30px;   
     transition: background-color 0.5s ease;
 }  
+/* para que la sección sea responsive */
 .services__content {
     flex-basis: 0;
     flex-grow: 1;
@@ -364,14 +366,15 @@ body {
 }
 .tab__content {
     padding: 1em;
-    display: none;
+    display: none; /*para ocultar el contenido*/
 }  
 .tab__content p {
-    max-width: 650px;
+    max-width: 650px; /* Ancho max para la info del p */
 }
 .tab.active {
     color: var(--primary-color);
 }
+/* estilos a la clase active generada en js*/
 .tab__content.active {
     flex-basis: 0;
     flex-grow: 1;
@@ -395,13 +398,21 @@ body {
     background-image: url(../media/generalPhotoCapture.jpg);
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;    
+    padding: 4em 0;
+}
+.message__content {
+    flex-basis: 0;
+    flex-grow: 1;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    min-width: 250px; 
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 4em 0;
+    padding: var(--main-padding);
 }
-.message h3 {
+.message__content h3 {
     max-width: 450px;
     text-align: center;
 }
@@ -417,24 +428,25 @@ body {
 }
 .slider__content {
     display: flex;
-    animation: scroll 60s linear infinite;
-    width: calc(200px * 21);
+    animation: scroll 60s linear infinite; /* Animación de desplazamiento */
+    width: calc(200px * 21); /* Ancho total del contenido (200px por cada elemento multiplicado por el número de elementos) */
 }
 .slider__content--slide {
     width: 200px;
-    flex-shrink: 0; /*para evitar que se encojan*/
+    flex-shrink: 0; /*para evitar que los elementos se encojan*/
 }
+/* animación del slider */
 @keyframes scroll {
     0% {
-        transform: translateX(0);
+        transform: translateX(0); /* Sin desplazamiento al inicio */
     }
     100% {
-        transform: translateX(calc(-200px * 11));
+        transform: translateX(calc(-200px * 11)); /* Desplazamiento completo hacia la izquierda (número de slides multiplicado por su ancho negativo) */
     }
 }
-/* SECTION OPINIONS */
+/* ESTILOS PARA SECTION OPINIONS */
 .opinions {
-    background-image: linear-gradient(to top, #32c6eb, #000000);
+    background-image: linear-gradient(to top, #32c6eb, #000000); /*degradado linear*/
     padding: var(--main-padding);
     display: flex;
     flex-direction: column;
@@ -470,10 +482,11 @@ body {
     font-weight: bold;
 }  
 .opinions__container--opi p {
-    font-size: 16px;
+    font-size: 1rem;
     text-align: center;
     color: var(--background-color);
 }  
+/* estilos para el grupo de estrellas */
 .score {
     flex-basis: 0;
     flex-grow: 1;
@@ -484,11 +497,13 @@ body {
     align-items: center;
     gap: 10px;   
 }
+/* estilo para cada icono */
 .score__star {
     width: 30px;
     color: var(--secondary-color);   
 }
-/* INDEX ABOUT US: CONTACT */
+/* ESTILOS PARA INDEX: CONTACT */
+/* estilos apartado de datos de contacto */
 .contact {
     flex-basis: 0;
     flex-grow: 1;  
@@ -515,7 +530,7 @@ body {
     gap: 15px;
 }
 .contact__information--icons {
-    background-image: linear-gradient(to right, #32c6eb, #000000);
+    background-image: linear-gradient(to right, #32c6eb, #000000); /*degradado linear*/
     border-radius: 10px;
     display: inline;
     align-items: center;
@@ -529,6 +544,7 @@ body {
 .contact__information--icons span {
     color: var(--primary-color);
 }
+/* estilos para el apartado del formulario */
 .contact__form--container {
     flex-basis: 0;
     flex-grow: 1;  
@@ -552,6 +568,37 @@ body {
 #message {
     min-height: 100px; /*para establere un alto fijo en el campo de mensage del form*/
 }
+/* Estilos específicos para el bloque principal de contacto en dispositivos con (máximo 800px) */
+@media (max-width: 800px) {
+    .contact {
+        flex-basis: 0;
+        flex-grow: 1;  
+        flex-wrap: wrap;
+        min-width: 250px;    
+        display: flex;
+        justify-content: center;  
+        align-items: center;  
+        padding: 2em 0 2em;
+    }
+    .contact__container {
+        flex-basis: 0;
+        flex-grow: 1;  
+        flex-wrap: wrap;
+        min-width: 250px;   
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        padding: var(--main-padding);
+    }
+    .contact__container h3 {
+        text-align: center;
+    }
+    .contact__container p {
+        text-align: center;
+    }    
+}
+/* estilos para el mapa de la pag de contact */
 .block__map {
     flex-basis: 0;
     flex-grow: 1;  
@@ -559,41 +606,44 @@ body {
     min-width: 250px; 
     display: flex;
     padding: var(--main-padding); 
-    overflow: hidden; 
+    overflow: hidden; /*para ocultar la barra horizontal*/
 }
-/* INDEX PORTFOLIO MASONRY*/
+/* ESTILOS PARA EL INDEX PORTFOLIO MASONRY*/
 .masonry {
-    display: grid;
-    grid-template-columns: var(--grid-responsive);
-    grid-auto-flow: dense;   
+    display: grid; /* para vializar como una cuadrícula */
+    grid-template-columns: var(--grid-responsive); /* Columnas definidas por una variable CSS personalizada, con una cuadrícula flexible y responsive  */
+    grid-auto-flow: dense; /* Distribución del contenido */  
     gap: 15px;
     justify-content: center;
     padding: var(--main-padding);    
 }
 .masonry .masonry__picture {
-    position: relative;
-    height: 100%;
+    position: relative; /* Posición para posicionamiento de elementos internos */
+    /* Altura y ancho del contenedor de imagen */
+    height: 100%; 
     width: 100%;
-    object-fit: cover;
-    overflow: hidden;
+    object-fit: cover; /*para ajusta la img*/
+    overflow: hidden; /*para ocultar la barra horizontal*/
 }
 .masonry .masonry__picture img {
+    /* alto y ancho de las imgs */
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
 .masonry__block--small {
-    grid-column: span 1;
-    grid-row: span 1;
+    grid-column: span 1; /* Ocupa 1 columna */
+    grid-row: span 1; /* Ocupa 1 fila */
 }
 .masonry__block--medium {
-    grid-column: span 1;
-    grid-row: span 2;
+    grid-column: span 1; /* Ocupa 1 columna */
+    grid-row: span 2; /* Ocupa 2 fila */
 }
 .masonry__block--big {
-    grid-column: span 2;
-    grid-row: span 2;
+    grid-column: span 2; /* Ocupa 2 columna */
+    grid-row: span 2; /* Ocupa 2 fila */
 }
+/* Estilo para la leyenda de cada img */
 .masonry__picture figcaption {
     position: absolute;
     bottom: 0;
@@ -610,9 +660,11 @@ body {
     opacity: 1; /* Visible */
 }
 /* INDEX PORTFOLIO MASONRY RESPONSIVE DISP*/
+/* ajustar la cuadrícula masonry en pantallas más pequeñas  */
 @media (max-width: 1110px) { 
     .masonry {
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        /* el auto fit: ajusta automáticamente el número de columnas para llenar el espacio disponible, un ancho min (minmax) y se expande 1 fracción, para adapatar las img a su contenedor*/
     }   
 }
 @media (max-width: 700px) {
@@ -625,7 +677,7 @@ body {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
 }
-/* FOOTER */
+/* ESTILOS PARA EL FOOTER */
 .footer__container {
     display: flex;
     justify-content: space-between;
@@ -645,11 +697,13 @@ body {
     gap: 20px;
     text-align: center;
 }
+/* Estilo específico para que haya margen entre elementos en dispositivos con (máximo 1150px) */
 @media (max-width: 1150px) {
     .footer__content, .footer__form {
-        padding: 1em;
+        margin: 1em;
     }
 }
+/* tamaño para el logo */
 .footer__content img {
     width: 120px;
 }
@@ -665,22 +719,34 @@ body {
 .footer__form--info a {
     color: var(--secondary-color);
 }
-/* FOOTER FORMULARIO */
-.form__container {
-    flex-basis: 0;
-    flex-grow: 1;  
-    flex-wrap: wrap;
-    min-width: 250px;    
+.footer__form--info a:hover {
+    color: var(--primary-color);
+}
+/* ESTILOS PARA FOOTER FORMULARIO */
+.form__container {   
     display: flex;
     justify-content: center;    
     gap: 20px;
 } 
+/* Estilo específico del form para dispositivos con (máximo 900px) */
+@media (max-width: 900px) {
+    .form__container {
+        flex-basis: 0;
+        flex-grow: 1;  
+        flex-wrap: wrap;
+        min-width: 250px;    
+        display: flex;
+        justify-content: center;    
+        gap: 20px;
+    } 
+}
 input {     
-    padding: 10px;
+    padding: 1em; /* Relleno interior */
     background-color: var(--background-color);
-    border: none;
+    border: none; /* Sin borde */
     border-bottom: 1px solid var(--primary-color);    
 }
+/* color al texto del placeholder */
 input::placeholder {
     color: white;
 }
@@ -690,8 +756,8 @@ input::placeholder {
 button {
     background-color: var(--primary-color);
     color: var(--secondary-color);
-    padding: 12px 20px;
-    border: none;
+    padding: 1em 2em;
+    border: none; /* Sin borde */
     border-radius: 20px;
     cursor: pointer;
 }  
@@ -699,11 +765,11 @@ button:hover {
     background-color: var(--secondary-color);
     color: var(--primary-color);
 }
-/* footer separador */
+/* Estilos para la línea que actua como separador*/
 .border {
     border-bottom: 1px solid var(--primary-color);
 }
-/* FOOTER NAV, RRSS, LEGAL TEXT */
+/* ESTILOS PARA FOOTER NAV, RRSS, LEGAL TEXT */
 .footer__blockNav, .footer__rrss, .footer__legalText {
     display: flex;
     justify-content: center;  
@@ -713,24 +779,25 @@ button:hover {
     padding: 1em;
 }
 .footer__blockNav a {    
-    position: relative;
+    position: relative; /*para posicionar la línea que está en absolut*/
     display: flex;    
     align-items: end;
     gap: 7px;
     color: var(--secondary-color);
-    transition: color 0.3s ease;
+    transition: color 0.3s ease; /* Transición suave de color */
 }
-/* ::after para crear un pseudo-elemento que actuará como la línea de subrayado. tiene un ancho de 0 y está centrada con (left: 50%). */
+/* Pseudo-elemento ::after para crear una línea de subrayado animada . tiene un ancho de 0 y está centrada con (left: 50%). */
 .footer__blockNav a::after {
-    content: '';
+    content: ''; /* Contenido vacío del pseudo-elemento */
     position: absolute;
-    width: 0;
-    height: 2px;
-    display: block;    
-    left: 50%;
+    width: 0; /* Ancho inicial de 0 */
+    height: 2px; /* Altura de la línea de subrayado */
+    display: block; /*se muestra*/     
+    left: 50%; /* Alineación a la mitad */
     background: var(--secondary-color);
-    transition: width 0.4s ease, left 0.4s ease;
+    transition: width 0.4s ease, left 0.4s ease; /* Transicion para animar el ancho y la posición */
 }
+/* estilo para el hover de los links de navegación del footer */
 .footer__blockNav a:hover {
     color: var(--primary-color);
 }
@@ -742,8 +809,9 @@ button:hover {
 .footer__rrss img {
     width: 35px;
 }
+/* Efecto al hacer hover sobre los icons de las rrss */
 .footer__rrss img:hover{
-    border-radius:50%;
+    border-radius:50%; /* Borde redondeado */
     /* box-shadow (para establecer sombras o resplandores)  */
     box-shadow: 0px 0px 7px 7px var(--secondary-color);    
 }
@@ -753,6 +821,7 @@ button:hover {
 .footer__legalText a:hover {
     color: var(--primary-color);
 }
+/* estilos para el texto de copy right */
 .copyRight {
     font-size: .75rem;
     display: flex;
@@ -760,40 +829,42 @@ button:hover {
     color: var(--primary-color);
     padding: 1em;
 }
-/* BOTON SHIPE UP */
+/* ESTILOS PARA BOTON SHIPE UP */
 #btn__swipeUp {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 25px;
+    right: 25px;
     background-color: var(--secondary-color);
     color: var(--primary-color);
     border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    border-radius: 50%; /* Borde redondeado */
+    width: 45px;
+    height: 55px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: bold;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation: swipe-up 1s linear infinite;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra alrededor del botón */
+    animation: swipe-up 1s linear infinite; /* Animación de desplazamiento hacia arriba */
     transition: background-color 0.3s;
 }
+/* Efecto al hacer hover */
 #btn__swipeUp:hover {
     background-color: var(--primary-color);
     color: var(--secondary-color);
 }
+/* Animación de desplazamiento hacia arriba */
 @keyframes swipe-up {
     0%{
-        transform: translateY(0px);
+        transform: translateY(0px); /* Sin desplazamiento al inicio */
     }
     50%{
-        transform: translateY(10px);
+        transform: translateY(10px); /* Se desplaza hacia abajo al 50% */
     }
     100%{
-        transform: translateY(0px);
+        transform: translateY(0px); /* Regresa al inicio */
     }
 }
 
